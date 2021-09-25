@@ -85,7 +85,7 @@ function DropdownNavbarItemDesktop({items, position, className, ...props}) {
   return (
     <div
       ref={dropdownRef}
-      className={clsx('navbar__item', 'dropdown', 'dropdown--hoverable', {
+      className={clsx('dropdown', 'dropdown--hoverable', {
         'dropdown--right': position === 'right',
         'dropdown--show': showDropdown,
       })}>
@@ -175,7 +175,7 @@ function DropdownNavbarItemMobile({
   );
 }
 
-function DropdownNavbarItem({mobile = false, ...props}) {
+function DropdownNavbarItem({mobile = false, isDropdownItem: _isDropdownItem, ...props}) {
   const Comp = mobile ? DropdownNavbarItemMobile : DropdownNavbarItemDesktop;
   return <Comp {...props} />;
 }

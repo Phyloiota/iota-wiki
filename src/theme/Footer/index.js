@@ -10,7 +10,8 @@ import Link from '@docusaurus/Link';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ThemedImage from '@theme/ThemedImage';
-import SocialBar from '@theme/SocialBar';
+import Social from '@theme/Social';
+
 
 function FooterLink({to, href, label, prependBaseUrlToHref, ...props}) {
   const toUrl = useBaseUrl(to);
@@ -50,21 +51,21 @@ function Footer() {
   }
 
   return (
-    <>
-      <footer
-        className={clsx('footer', 'padding--none', 'padding-top--xl', {
-          'footer--dark': footer.style === 'dark',
-        })}>
+    <footer
+      className={clsx('footer', 'padding--none', {
+        'footer--dark': footer.style === 'dark',
+      })}>
+      <div className='container'>
         {links && links.length > 0 && (
-          <div className="row footer__links padding-top--lg padding-bottom--xl">
+          <div className="row footer__links padding-vert--xl">
             {links.map((linkItem, i) => (
               <div key={i} className="col footer__col">
                 {linkItem.title != null ? (
                   <h4 className="footer__title">{linkItem.title}</h4>
                 ) : null}
                 {linkItem.items != null &&
-                Array.isArray(linkItem.items) &&
-                linkItem.items.length > 0 ? (
+                  Array.isArray(linkItem.items) &&
+                  linkItem.items.length > 0 ? (
                   <ul className="footer__items">
                     {linkItem.items.map((item, key) =>
                       item.html ? (
@@ -89,7 +90,7 @@ function Footer() {
           </div>
         )}
         {(logo || copyright) && (
-          <div className="footer__bottom padding-top--xl padding-bottom--lg">
+          <div className="footer__bottom padding-bottom--xl">
             {logo && (logo.src || logo.srcDark) && (
               <div>
                 {logo.href ? (
@@ -112,9 +113,9 @@ function Footer() {
             ) : null}
           </div>
         )}
-        <SocialBar />
-      </footer>
-    </>
+      </div>
+      <Social/>
+    </footer>
   );
 }
 

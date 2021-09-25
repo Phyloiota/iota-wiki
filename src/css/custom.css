@@ -1,696 +1,219 @@
-html {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 400;
+@import "fonts.css";
+@import "variables.css";
+@import "patches.css";
+
+
+.dropdown > .navbar__link:after,
+.menu__link--sublist:after {
+  content: 'expand_more';
+  font-family: 'Material Icons';
+  font-size: 1.25rem;
 }
 
-article {  
-  max-width: 800px; 
-  padding-top: 3rem; 
-  padding-bottom: 3rem;
+.dropdown__label,
+.footer__title {
+  font-family: "Metropolis Bold";
+  font-size: 0.8rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
 }
 
-h1 {    
-  font-size: 2.5rem !important;  
-}  
-
-h2 {    
- font-size: 1.8rem !important; 
- padding-top: 1rem; 
-} 
-
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 100;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Thin.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Thin.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 100;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-ThinItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ThinItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 200;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraLight.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraLight.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 200;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraLightItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraLightItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 300;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Light.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Light.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 300;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-LightItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-LightItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Regular.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Regular.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Italic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Italic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 500;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Medium.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Medium.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 500;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-MediumItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-MediumItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 600;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-SemiBold.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-SemiBold.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 600;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-SemiBoldItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-SemiBoldItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Bold.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Bold.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 700;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-BoldItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-BoldItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 800;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraBold.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraBold.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 800;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraBoldItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraBoldItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 900;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Black.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Black.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 900;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-BlackItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-BlackItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter var;
-      font-style: normal;
-      font-weight: 100 900;
-      font-display: swap;
-      font-named-instance: "Regular";
-      src: url(https://webassets.iota.org/fonts/inter/Inter-roman.var.woff2?v=3.13) format("woff2")
-  }
-
-  @font-face {
-      font-family: Inter var;
-      font-style: italic;
-      font-weight: 100 900;
-      font-display: swap;
-      font-named-instance: "Italic";
-      src: url(https://webassets.iota.org/fonts/inter/Inter-italic.var.woff2?v=3.13) format("woff2")
-  }
-
-  @font-face {
-      font-family: Metropolis Regular;
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Regular.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Regular.woff?v=11) format("woff")
-  }
-
-  @font-face {
-      font-family: Metropolis Light;
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Light.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Light.woff?v=11) format("woff")
-  }
-
-  @font-face {
-      font-family: Metropolis Medium;
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Medium.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Medium.woff?v=11) format("woff")
-  }
-
-  @font-face {
-      font-family: Metropolis Semi Bold;
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-SemiBold.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-SemiBold.woff?v=11) format("woff")
-  }
-
-  @font-face {
-      font-family: Metropolis Bold;
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff?v=11) format("woff")
-  }
-
-
-  :root {
-    --ifm-color-primary: #36A1AC;
-    --ifm-color-success: #0FC1B7;
-    --ifm-color-info: #2E8698;
-    --ifm-color-warning: #e5a23e;
-    --ifm-color-danger: #e53e3e;
-
-    --ifm-color-primary-dark: color-mod(
-      var(--ifm-color-primary) shade(var(--ifm-dark-value))
-    );
-    --ifm-color-primary-darker: color-mod(
-      var(--ifm-color-primary),
-      shade(var(--ifm-darker-value))
-    );
-    --ifm-color-primary-darkest: color-mod(
-      var(--ifm-color-primary),
-      shade(var(--ifm-darkest-value))
-    );
-    --ifm-color-primary-light: color-mod(
-      var(--ifm-color-primary),
-      tint(var(--ifm-light-value))
-    );
-    --ifm-color-primary-lighter: color-mod(
-      var(--ifm-color-primary),
-      tint(var(--ifm-lighter-value))
-    );
-    --ifm-color-primary-lightest: color-mod(
-      var(--ifm-color-primary),
-      tint(var(--ifm-lightest-value))
-    );
-
-    --ifm-color-secondary-dark: color-mod(
-      var(--ifm-color-secondary),
-      shade(var(--ifm-dark-value))
-    );
-    --ifm-color-secondary-darker: color-mod(
-      var(--ifm-color-secondary),
-      shade(var(--ifm-darker-value))
-    );
-    --ifm-color-secondary-darkest: color-mod(
-      var(--ifm-color-secondary),
-      shade(var(--ifm-darkest-value))
-    );
-    --ifm-color-secondary-light: color-mod(
-      var(--ifm-color-secondary),
-      tint(var(--ifm-light-value))
-    );
-    --ifm-color-secondary-lighter: color-mod(
-      var(--ifm-color-secondary),
-      tint(var(--ifm-lighter-value))
-    );
-    --ifm-color-secondary-lightest: color-mod(
-      var(--ifm-color-secondary),
-      tint(var(--ifm-lightest-value))
-    );
-
-    --ifm-color-success-dark: color-mod(
-      var(--ifm-color-success),
-      shade(var(--ifm-dark-value))
-    );
-    --ifm-color-success-darker: color-mod(
-      var(--ifm-color-success),
-      shade(var(--ifm-darker-value))
-    );
-    --ifm-color-success-darkest: color-mod(
-      var(--ifm-color-success),
-      shade(var(--ifm-darkest-value))
-    );
-    --ifm-color-success-light: color-mod(
-      var(--ifm-color-success),
-      tint(var(--ifm-light-value))
-    );
-    --ifm-color-success-lighter: color-mod(
-      var(--ifm-color-success),
-      tint(var(--ifm-lighter-value))
-    );
-    --ifm-color-success-lightest: color-mod(
-      var(--ifm-color-success),
-      tint(var(--ifm-lightest-value))
-    );
-
-    --ifm-color-info-dark: color-mod(
-      var(--ifm-color-info),
-      shade(var(--ifm-dark-value))
-    );
-    --ifm-color-info-darker: color-mod(
-      var(--ifm-color-info),
-      shade(var(--ifm-darker-value))
-    );
-    --ifm-color-info-darkest: color-mod(
-      var(--ifm-color-info),
-      shade(var(--ifm-darkest-value))
-    );
-    --ifm-color-info-light: color-mod(
-      var(--ifm-color-info),
-      tint(var(--ifm-light-value))
-    );
-    --ifm-color-info-lighter: color-mod(
-      var(--ifm-color-info),
-      tint(var(--ifm-lighter-value))
-    );
-    --ifm-color-info-lightest: color-mod(
-      var(--ifm-color-info),
-      tint(var(--ifm-lightest-value))
-    );
-
-    --ifm-color-warning-dark: color-mod(
-      var(--ifm-color-warning),
-      shade(var(--ifm-dark-value))
-    );
-    --ifm-color-warning-darker: color-mod(
-      var(--ifm-color-warning),
-      shade(var(--ifm-darker-value))
-    );
-    --ifm-color-warning-darkest: color-mod(
-      var(--ifm-color-warning),
-      shade(var(--ifm-darkest-value))
-    );
-    --ifm-color-warning-light: color-mod(
-      var(--ifm-color-warning),
-      tint(var(--ifm-light-value))
-    );
-    --ifm-color-warning-lighter: color-mod(
-      var(--ifm-color-warning),
-      tint(var(--ifm-lighter-value))
-    );
-    --ifm-color-warning-lightest: color-mod(
-      var(--ifm-color-warning),
-      tint(var(--ifm-lightest-value))
-    );
-
-    --ifm-color-danger-dark: color-mod(
-      var(--ifm-color-danger),
-      shade(var(--ifm-dark-value))
-    );
-    --ifm-color-danger-darker: color-mod(
-      var(--ifm-color-danger),
-      shade(var(--ifm-darker-value))
-    );
-    --ifm-color-danger-darkest: color-mod(
-      var(--ifm-color-danger),
-      shade(var(--ifm-darkest-value))
-    );
-    --ifm-color-danger-light: color-mod(
-      var(--ifm-color-danger),
-      tint(var(--ifm-light-value))
-    );
-    --ifm-color-danger-lighter: color-mod(
-      var(--ifm-color-danger),
-      tint(var(--ifm-lighter-value))
-    );
-    --ifm-color-danger-lightest: color-mod(
-      var(--ifm-color-danger),
-      tint(var(--ifm-lightest-value))
-    );
-
-    --ifm-color-gray-100: #E8EEFB;
-    --ifm-color-gray-200: #F2F5FB ;
-    --ifm-color-gray-300: #EEF2FA;
-    --ifm-color-gray-400: #CBD2E0;
-    --ifm-color-gray-500: #A7B3C7;
-    --ifm-color-gray-600: #8493AD;
-    --ifm-color-gray-700: #202B42;
-    --ifm-color-gray-800: #131F37;
-    --ifm-color-gray-900: #0A101C;
-
-    --ifm-hover-overlay: var(--ifm-color-emphasis-200);
-
-    --ifm-font-color-base: var(--ifm-color-emphasis-700);
-    --ifm-font-family-base: Inter, sans-serif;
-    --ifm-line-height-base: 1.5;
-
-    --ifm-heading-color: var(--ifm-color-gray-900);
-    --ifm-heading-font-family: Metropolis Bold;
-
-    --ifm-link-hover-decoration: none;
-
-    --ifm-global-border-width: 2px;
-    --ifm-global-radius: 0.5rem;
-
-    --ifm-navbar-link-color: #485776;
-    --ifm-navbar-link-hover-color: var(--ifm-color-primary);
-    --ifm-navbar-link-active-color: var(--ifm-color-primary);
-
-    --ifm-footer-color: var(--ifm-navbar-link-color);
-    --ifm-navbar-padding-horizontal: 25px;
-    --ifm-navbar-padding-vertical: 18px;
-    --ifm-navbar-height: 68px;
-
-    --ifm-menu-color: var(--ifm-color-emphasis-600);
-    --ifm-menu-color-active: var(--ifm-color-primary);
-    --ifm-menu-color-background-active: transparent;
-
-    --ifm-button-color: white;
-  }
-
-  html[data-theme='dark'] {
-    --ifm-color-primary: #14CABF;
-    
-    --ifm-background-color: #0D192F;
-    --ifm-background-surface-color: #0D192F;
-
-    --ifm-navbar-link-color: #B0BFD9;
-    --ifm-navbar-background-color:#0D192F;
-
-    --ifm-menu-color-background-hover: var(--ifm-color-emphasis-300);
-
-    --ifm-footer-background-color: #0D192F;
-    --ifm-card-background-color:#293858;
-
-    --ifm-heading-color: inherit;
-
-    --ifm-hover-overlay: #0D192F;
-  }
-
-  .alert h1,
-  .alert h2,
-  .alert h3,
-  .alert h4,
-  .alert h5,
-  .alert h6,
-  .hero h1,
-  .hero h2,
-  .hero h3,
-  .hero h4,
-  .hero h5,
-  .hero h6 {
-      color: inherit;
-  }
-
-
-.menu__list {
-    margin-bottom: 15px;
+.dropdown__link {
+  font-size: 1rem;
 }
 
-.menu__link {
-  font-family: 'Metropolis Medium';
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 15px;
-  border-radius: 0px;
+.dropdown__menu--mega {
+  padding: calc(var(--ifm-navbar-padding-vertical) + 1rem) var(--ifm-navbar-padding-horizontal) !important;
+}
+
+.dropdown__menu--mega .link__label {
+  font-family: "Metropolis Semi Bold", sans-serif;
+}
+
+.card {
+  cursor: pointer;
+}
+
+.card__image img {
+  width: 100%;
+}
+
+.footer__copyright {
+  margin: 0 var(--ifm-spacing-horizontal);
+  margin-bottom: 0.9rem;
+}
+
+.footer__bottom {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: max(1rem, calc(20% - 10rem));
+  margin-right: max(1rem, calc(20% - 10rem));
+}
+
+.footer__links {
+  font-size: 1rem;
+  margin-left: max(1rem, calc(20% - 10rem));
+  margin-right: max(1rem, calc(20% - 10rem));
+}
+
+.footer__logo {
+  margin: 0 var(--ifm-spacing-horizontal);
+}
+
+.link__icon {
+  font-family: 'icomoon' !important;
+  font-size: 2.5rem;
+}
+
+[data-theme='dark'] .link__icon {
+  color: var(--ifm-menu-color);
+}
+
+.markdown {
+  margin: 2rem 3rem;
+}
+
+@media screen and (max-width: 966px) {
+  .markdown {
+    margin: 2rem 0;
+  }
+}
+
+.menu {
+  border-top: var(--ifm-global-border-width) solid var(--ifm-color-emphasis-200);
+  font-weight: var(--ifm-font-weight-normal);
+  font-size: 0.9rem;
+  margin-top: calc(-1 * var(--ifm-global-border-width));
+  padding-top: calc(1rem + var(--ifm-toc-padding-vertical)) !important;
 }
 
 .menu__link--active {
-  font-family: 'Metropolis Semi Bold';
-  border-left: 3px solid var(--ifm-color-primary);
-  padding-left: 12px;
-  background-color: rgba(54, 161, 172, .04);
+  font-weight: var(--ifm-font-weight-semibold);
 }
 
-.menu__link--sublist {
+.navbar {
+  border-bottom: var(--ifm-global-border-width) solid var(--ifm-color-emphasis-200);
+}
+
+.navbar__item {
   font-family: 'Metropolis Semi Bold';
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-radius: 0px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.table-of-contents,
+.table-of-contents li,
+.table-of-contents ul,
+.table-of-contents__left-border {
   border: none;
+  margin: 0 !important;
+  padding: 0 !important;
 }
-
-.menu .menu__link.menu__link--sublist:after {
-  background-size: 1.6rem 1.6rem;
-}
-
 
 .table-of-contents__link {
-  font-family: 'Metropolis Medium';
-  font-size: 1rem;
-  color: var(--ifm-color-emphasis-600);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 15px;
-  box-decoration-break: clone;
+  border-left: var(--ifm-global-border-width) solid var(--ifm-toc-border-color);
+  display: inline-block;
+  padding: var(--ifm-toc-padding-vertical) var(--ifm-toc-padding-horizontal);
+
+  transition-property: border-color, color;
+  transition-duration: var(--ifm-transition-slow);
+  transition-timing-function: var(--ifm-transition-timing-default);
+}
+
+.table-of-contents__link:hover {
+  color: var(--ifm-menu-color-active);
+}
+
+ul ul .table-of-contents__link {
+  padding-left: calc(2 * var(--ifm-toc-padding-horizontal));
 }
 
 .table-of-contents__link--active {
-  color: var(--ifm-color-primary);
-  font-family: 'Metropolis Semi Bold';
-  border-left: 3px solid var(--ifm-color-primary);
-  padding-left: 12px;
+  border-left-color: var(--ifm-menu-color-active);
+  color: var(--ifm-menu-color-active);
+  font-weight: var(--ifm-font-weight-semibold);
 }
 
-
-.table-of-contents {
-  padding: 0px;
+.theme-doc-toc-mobile {
+  color: var(--ifm-menu-color);
 }
 
-
-  .navbar {
-      font-family: 'Metropolis Semi Bold';
-      line-height: 1.25rem;
-      font-weight: 400;
-      border-bottom: 1px solid #E8EEFB;
-      box-shadow: none;
-  }
-  [data-theme='dark']  .navbar {
-    border-bottom: 1px solid var(--ifm-color-gray-700);
-   }
-
-
-  .navbar__items--right > * {
-    margin-left: 2rem;
-  }
-
-  .navbar__brand {
-    height: 25px;
-  }
-
-  .section-header {
-    font-family: 'Metropolis Semi Bold';
-    font-size: 1.5rem;
-    letter-spacing: 0.04em;
-    color: #909FBE;
-  }
-
-  [data-theme='dark']  .section-header {
-   color: #B0BFD9;
-  }
-
-  .footer {
-    border-top: 1px solid #E8EEFB;
-    background-color: #fff;
-  }
-
-  [data-theme='dark'] .footer {
-    border-top: 1px solid var(--ifm-color-gray-700);
-    background-color: #0D192F;
-  }
-
-
-  .footer__links {
-    margin-left: max(1rem, calc(20% - 5rem));
-    margin-right: max(1rem, calc(20% - 5rem));
-    font-size: 1rem;
-  }
-
-  .footer__bottom {
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    margin-left: max(1rem, calc(20% - 5rem));
-    margin-right: max(1rem, calc(20% - 5rem));
-  }
-
-  .footer__logo {
-    height: 3rem;
-    margin-right: 1em;
-    margin-bottom: -1em;
-  }
-
-  .footer__copyright {
-    font-size: 0.9rem;
-    margin-top: 1em;
-  }
-
-  ::selection {
-    background-color: #b3d4fc;
-    color: #000;
-    text-shadow: none;
-  }
-
-  .grey {
-    color: var(--ifm-navbar-link-color);
-  }
-
-  .headline-stick {
-    height: 4px;
-    background-color: var(--ifm-color-primary);
-    margin-bottom: 1.25rem;
-    width: 16px;
-    transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
-  }
-
-  .headline-stick.size-s {
-    width: 32px;
-  }
-
-  .headline-stick.size-m {
-    width: 48px;
-  }
-
-  /*
-  Patch to avoid displaying a double header in imported DOCS
-  */
-  div.markdown > p > header > h1 {
-  display:none;
-  }
-
-/**
-Logo fonts CSS
-**/
-
-@font-face {
-    font-family: 'icomoon';
-    src:  url('fonts/icomoon.eot?yl49be');
-    src:  url('fonts/icomoon.eot?yl49be#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?yl49be') format('truetype'),
-    url('fonts/icomoon.woff?yl49be') format('woff'),
-    url('fonts/icomoon.svg?yl49be#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
+.theme-doc-toc-mobile button::after {
+  content: 'expand_less';
+  font-family: 'Material Icons';
+  font-size: 1.25rem;
 }
 
-.dropdown > .navbar__link--active:after {
-    border-color: currentColor transparent;
-    border-style: solid;
-    border-width: 0.4em 0.4em 0;
-    content: '';
-    display: inline-block;
-    margin-left: 0.3em;
-    position: relative;
-    top: 2px;
-    transform: translateY(-50%);
+.theme-doc-toc-mobile .table-of-contents__link{
+  border-left: none;
+  color: var(--ifm-menu-color);
 }
 
-[class^="icon-"],  [class*=" icon-"]  {
-    justify-content: left ;
-}
-
-[class^="icon-"]:before, [class*=" icon-"]:before {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin-right: 10px;
-}
-
-.icon-chrysalis:before {
-    content: "\e909";
-}
-.icon-wasp:before {
-    content: "\e900";
-}
-.icon-wallet:before {
-    content: "\e901";
-}
-.icon-stronghold:before {
-    content: "\e902";
-}
-.icon-iota-mark:before {
-    content: "\e903";
-}
-.icon-iota-20:before {
-    content: "\e904";
-}
-.icon-identity:before {
-    content: "\e905";
-}
-.icon-hornet:before {
-    content: "\e906";
-}
-.icon-goshimmer:before {
-    content: "\e907";
-}
-.icon-getting-started:before {
-    content: "\e908";
-}
-.icon-bee:before {
-    content: "\e90a";
+::selection {
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none;
 }
 
 /**
-Logo fonts CSS
-**/
+Search bar
+ */
+.DocSearch-Button-Keys, .DocSearch-Button-Placeholder, .DocSearch-Footer{
+  display: none !important;
+}
+
+.DocSearch-Modal{
+  width: 80% !important;
+  max-width: 80% !important;
+  box-shadow: none !important;
+}
+
+.DocSearch-Hit a {
+  box-shadow: none !important;
+}
+html[data-theme='light'] .DocSearch {
+  /* --docsearch-primary-color: var(--ifm-color-primary); */
+  /* --docsearch-text-color: var(--ifm-font-color-base); */
+  --docsearch-muted-color: var(--ifm-color-secondary);
+  --docsearch-container-background: var(--ifm-color-white);
+  /* Modal */
+  --docsearch-modal-background: var(--ifm-color-secondary-lighter);
+  /* Search box */
+  --docsearch-searchbox-background: var(--ifm-color-secondary);
+  --docsearch-searchbox-focus-background: var(--ifm-color-white);
+  /* Hit */
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-hit-active-color: var(--ifm-color-white);
+  --docsearch-hit-background: var(--ifm-color-white);
+  /* Footer */
+  --docsearch-footer-background: var(--ifm-color-white);
+}
+
+
+html[data-theme='light'] .DocSearch-Hit-source {
+  background: var(--ifm-color-white) !important;
+}
+
+
+html[data-theme='dark'] .DocSearch {
+  --docsearch-text-color: var(--ifm-font-color-base);
+  --docsearch-muted-color: var(--ifm-color-secondary-darkest);
+  --docsearch-container-background: var(--ifm-background-color);
+  /* Modal */
+  --docsearch-modal-background: var(--ifm-background-color);
+  /* Search box */
+  --docsearch-searchbox-background:  var(--ifm-background-color);
+  --docsearch-searchbox-focus-background: var(--ifm-color-black);
+  /* Hit */
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-hit-active-color: var(--ifm-color-white);
+  --docsearch-hit-background:  var(--ifm-background-color);
+  /* Footer */
+  --docsearch-footer-background:  var(--ifm-background-color);
+  --docsearch-key-gradient: linear-gradient(
+          -26.5deg,
+          var(--ifm-color-emphasis-200) 0%,
+          var(--ifm-color-emphasis-100) 100%
+  );
+}

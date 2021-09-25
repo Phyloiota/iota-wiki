@@ -62,9 +62,11 @@
 
 Please feel free to contribute to any of the available pages. This is the current state of progress:
 
-In this sheet all current Menu pages are marked with current progress status. You can choose the page you would like to contribute and get linked directly to the editable .md file in our Repo here:
+In this document all current Menu pages are marked with current progress status. You can choose the page you would like to contribute and get linked directly to the editable .md file in our Repo here:
 
-https://docs.google.com/spreadsheets/d/1GjYFRrNhloVyR6kSAVlMAEWadY3onRv6UFnpQGRl0Z8/edit?usp=sharing
+https://www.notion.so/iotafoundation/Contribute-to-the-IOTA-Wiki-698e95b0bac8469d897fd13cf49574b3
+
+Please mark the page you work on "in progress"
 
 
 <!-- ABOUT THE PROJECT -->
@@ -85,7 +87,8 @@ Install [Node.js](https://nodejs.org/en/download/).
 
 ### Local Development
 
-1. Run `yarn install` and `npx docusaurus start` in your terminal
+1. Run `yarn install` in your terminal. If you want to also install the external docs use `yarn cli start` and `yarn cli checkout`
+3. Run `npx docusaurus start`
 2. Open `http://localhost:3000`
 
 <!-- CONTRIBUTING -->

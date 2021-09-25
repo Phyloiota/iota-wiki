@@ -6,87 +6,71 @@
  */
 import React, {useState, useRef, memo} from 'react';
 import {useThemeConfig} from '@docusaurus/theme-common';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 import clsx from 'clsx';
-import styles from './styles.module.css';
-
-const Dark = ({icon, style}) => (
-  <span className={clsx(styles.toggle, styles.dark)} style={style}>
-    {icon}
-  </span>
-);
-
-const Light = ({icon, style}) => (
-  <span className={clsx(styles.toggle, styles.light)} style={style}>
-    {icon}
-  </span>
-); // Based on react-toggle (https://github.com/aaronshaf/react-toggle/).
+import './styles.css';
 
 const Toggle = memo(
-  ({className, icons, checked: defaultChecked, disabled, onChange}) => {
+  ({className, styles, icons, checked: defaultChecked, disabled, onChange}) => {
     const [checked, setChecked] = useState(defaultChecked);
     const [focused, setFocused] = useState(false);
     const inputRef = useRef(null);
-
-    const handleToggle = (e) => {
-      const checkbox = inputRef.current;
-
-      if (!checkbox) {
-        return;
-      }
-
-      if (e.target !== checkbox) {
-        e.preventDefault();
-        checkbox.focus();
-        checkbox.click();
-        return;
-      }
-
-      setChecked(checkbox?.checked);
-    };
-
     return (
       <div
-        className={clsx('react-toggle', className, {
-          'react-toggle--checked': checked,
-          'react-toggle--focus': focused,
-          'react-toggle--disabled': disabled,
+        className={clsx('toggle', className, {
+          'toggle--checked': checked,
+          'toggle--focused': focused,
+          'toggle--disabled': disabled,
         })}
         role="button"
         tabIndex={-1}
-        onClick={handleToggle}>
-        <div className="react-toggle-track">
-          <div className="react-toggle-track-check">{icons.checked}</div>
-          <div className="react-toggle-track-x">{icons.unchecked}</div>
+        onClick={() => inputRef.current?.click()}>
+
+        <div className="toggle__icon toggle__icon--unchecked" style={styles.unchecked}>
+          {icons.unchecked}
+        </div>
+        <div className="toggle__icon toggle__icon--checked" style={styles.checked}>
+          {icons.checked}
         </div>
 
         <input
           ref={inputRef}
           checked={checked}
           type="checkbox"
-          className="react-toggle-screenreader-only"
+          className="toggle__screenreader-only"
           aria-label="Switch between dark and light mode"
           onChange={onChange}
+          onClick={() => setChecked(!checked)}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              inputRef.current?.click();
+            }
+          }}
         />
       </div>
     );
   },
 );
+
 export default function (props) {
   const {
     colorMode: {
       switchConfig: {darkIcon, darkIconStyle, lightIcon, lightIconStyle},
     },
   } = useThemeConfig();
-  const {isClient} = useDocusaurusContext();
+  const isBrowser = useIsBrowser();
   return (
     <Toggle
-      disabled={!isClient}
+      disabled={!isBrowser}
+      styles={{
+        unchecked: lightIconStyle,
+        checked: darkIconStyle,
+      }}
       icons={{
-        checked: <Dark icon={darkIcon} style={darkIconStyle} />,
-        unchecked: <Light icon={lightIcon} style={lightIconStyle} />,
+        unchecked: lightIcon,
+        checked: darkIcon,
       }}
       {...props}
     />

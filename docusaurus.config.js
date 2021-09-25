@@ -22,6 +22,19 @@ module.exports = {
     },
   ],
   themeConfig: {
+    typesense: {
+        typesenseCollectionName: 'IOTAWiki', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+        typesenseServerConfig: {
+          nodes: [
+            {
+              host: 'blog-search.iota.org',
+              port: 443,
+              protocol: 'https',
+            },
+          ],
+          apiKey: '5ji1bYzTgX8ewA6EheyH8hbS1w9RZZWT',
+        },
+    },
     announcementBar: {
       id: 'wip', // Any value that will identify this message.
       content:
@@ -47,24 +60,123 @@ module.exports = {
           to: "docs/learn/about-iota/an-introduction-to-iota",
         },
         {
-          label: "Use",
-          to: "docs/use/use-cases/industry-applications",
+          label: "Participate",
+          to: "docs/participate/support-the-network/about-nodes",
         },
         {
-          label: 'Develop',
-          items: [
+          label: 'Build',
+          to: '#',
+          layout: [
+            '0 1 3 4',
+            '0 1 3 4',
+            '. 1 3 2',
+            '. 1 3 2',
+            '. 1 3 2',
+          ],
+          items_: [
             {
               label: "Getting Started",
-              to: "docs/develop/getting-started/architecture",
-              className: 'icon-getting-started',
-              activeBaseRegex: 'docs/develop/getting-started/.*'
+              items: [
+                {
+                  label: "Getting Started",
+                  sublabel: "IOTA development basics",
+                  to: "docs/build/getting-started/architecture",
+                  icon: "\ue908",
+                  activeBaseRegex: 'docs/build/getting-started/.*'
+                }
+              ]
             },
-            /* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG */
-          ]
-        },
-        {
-          label: "Participate",
-          to: "docs/participate/support-the-network/run-a-node",
+            {
+              label: 'Chrysalis (IOTA 1.5)',
+              items: [
+                {
+                  label: "Chrysalis Docs",
+                  sublabel: "Mainnet documentation",
+                  to: "chrysalis-docs/welcome",
+                  icon: "\ue909",
+                  activeBaseRegex: 'chrysalis-docs/.*',
+                },
+                {
+                  label: "Bee Node",
+                  sublabel: "IOTA node written in Rust",
+                  to: "bee/getting_started/getting_started",
+                  icon: "\ue90a",
+                  activeBaseRegex: 'bee/.*'
+                },
+                {
+                  label: "Hornet Node",
+                  sublabel: "IOTA node written in Go",
+                  to: "hornet/welcome",
+                  icon: "\ue906",
+                  activeBaseRegex: 'hornet/.*'
+                },
+              ],
+            },
+            {
+              label: 'Coordicide (IOTA 2.0)',
+              items: [
+                {
+                  label: "Coordicide Specs",
+                  sublabel: "Decentralizing IOTA",
+                  to: "IOTA-2.0-Research-Specifications/Preface",
+                  icon: "\ue904",
+                  activeBaseRegex: 'IOTA-2.0-Research-Specifications/.*'
+                },
+                {
+                  label: "GoShimmer Node",
+                  sublabel: "IOTA 2.0 node",
+                  to: "goshimmer/welcome",
+                  icon: "\ue907",
+                  activeBaseRegex: 'goshimmer/.*'
+                },
+              ],
+            },
+            {
+              label: 'Libraries',
+              items: [
+                {
+                  label: "Core",
+                  sublabel: "IOTA core functionality",
+                  to: "iota.rs/welcome",
+                  icon: "\ue903",
+                  activeBaseRegex: 'iota.rs/.*'
+                },
+                {
+                  label: "Wallet",
+                  sublabel: "Build IOTA wallets",
+                  to: "wallet.rs/welcome",
+                  icon: "\ue901",
+                  activeBaseRegex: 'wallet.rs/.*'
+                },
+                {
+                  label: "Stronghold",
+                  sublabel: "Handle secrets securely",
+                  to: "stronghold.rs/welcome",
+                  icon: "\ue902",
+                  activeBaseRegex: 'stronghold.rs/.*'
+                },
+                {
+                  label: "Identity",
+                  sublabel: "Identity framework",
+                  to: "identity.rs/introduction",
+                  icon: "\ue905",
+                  activeBaseRegex: 'identity.rs/.*'
+                },
+              ],
+            },
+            {
+              label: 'Smart Contracts',
+              items: [
+                {
+                  label: "Wasp Node",
+                  sublabel: "Smart contract node",
+                  to: "wasp/welcome",
+                  icon: "\ue900",
+                  activeBaseRegex: 'wasp/.*',
+                },
+              ],
+            },
+          ],
         },
         { to: '/blog', label: 'Blog', position: 'right' },
       ],
@@ -102,64 +214,6 @@ module.exports = {
           ],
         },
         {
-          title: 'USE',
-          items: [
-            {
-              label: 'Use Cases',
-              to: "docs/use/use-cases/industry-applications",
-            },
-            {
-              label: 'Streams',
-              to: "docs/use/streams/encrypted-data-comms",
-            },
-            {
-              label: 'Identity',
-              to: "docs/use/identity/enabling-privacy-and-trust",
-            },
-            {
-              label: 'Access',
-              to: "docs/use/access/secure-access-control",
-            },
-            {
-              label: 'Smart Contracts',
-              to: "docs/use/smart-contracts/programmable-contracts",
-            },
-            {
-              label: 'Stronghold',
-              to: "docs/use/stronghold/protecting-your-secrets",
-            },
-            {
-              label: 'Oracles',
-              to: "docs/use/oracles/trust-in-real-world-data",
-            },
-            {
-              label: 'Utilities',
-              to: "docs/use/utilities/tangle-explorer",
-            },
-          ],
-        },
-        {
-          title: 'DEVELOP',
-          items: [
-            {
-              label: 'Getting Started',
-              to: "docs/develop/getting-started/architecture",
-            },
-            {
-              label: 'Fundamentals',
-              to: "docs/develop/fundamentals/cryptography",
-            },
-            {
-              label: 'Exchange Integration',
-              to: "docs/develop/exchange-integration/guide",
-            },
-            {
-              label: 'Tutorials',
-              to: "docs/develop/tutorials/youtube",
-            },
-          ],
-        },
-        {
           title: 'PARTICIPATE',
           items: [
             {
@@ -178,20 +232,72 @@ module.exports = {
               label: 'Funding',
               to: "docs/participate/funding/edf-funding",
             },
+            {
+              label: 'Use Cases',
+              to: "docs/participate/use-cases/industry-applications",
+            },
+            {
+              label: 'Solutions',
+              to: "docs/participate/solutions/streams/introduction",
+            },
+          ],
+        },
+        {
+          title: 'BUILD',
+          items: [
+            {
+              label: 'Getting Started',
+              to: "docs/build/getting-started/architecture",
+            },
+            {
+              label: 'Fundamentals',
+              to: "docs/build/fundamentals/cryptography",
+            },
+            {
+              label: 'Exchange Integration',
+              to: "docs/build/exchange-integration/exchange-integration-guide",
+            },
+            {
+              label: 'Tutorials',
+              to: "docs/build/tutorials/youtube",
+            },
+          ],
+        },
+        {
+          title: 'WIKI',
+          items: [
+            {
+              label: 'Github',
+              href: 'https://github.com/iota-community/iota-wiki'
+            },
+            {
+              label: 'Editor Github',
+              href: 'https://github.com/jlvandenhout/docusaurus-plugin-docs-editor'
+            },
+            {
+              label: 'Docusaurus',
+              href: 'https://docusaurus.io'
+            },
+            {
+              label: 'Blog',
+              to: 'blog'
+            },
+            {
+              label: 'Contribute',
+              to: "docs/participate/contribute-to-wiki/welcome",
+            }
           ],
         },
       ],
       logo: {
         alt: 'IOTA Logo',
         src: 'img/iota_logo.svg',
-        srcDark: 'img/iota_logo_dark.svg',
         href: 'https://www.iota.org',
       },
-      copyright: `© ${new Date().getFullYear()} IOTA Wiki, Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} IOTA Wiki. Built with Docusaurus.`,
     },
     colorMode: {
       defaultMode: 'dark',
-
       // Dark/light switch icon options
       switchConfig: {
         // Icon for the switch while in dark mode
@@ -225,6 +331,8 @@ module.exports = {
       },
     },
   },
+  themes: ['docusaurus-theme-search-typesense'],
+
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -236,7 +344,8 @@ module.exports = {
           remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
         },
         blog: {
-          showReadingTime: true,
+          showReadingTime: false,
+          blogSidebarCount: 0,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
