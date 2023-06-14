@@ -1,5 +1,5 @@
 ---
-title: The Shimmer Governance Framework
+title: V4 The Shimmer Governance Framework UPDATE
 description: This is the full specification for all governance processes in the Shimmer network. Detailed rules and procedures are defined here.
 image: /img/learn/governance/shimmer-gov.png
 keywords:
@@ -11,7 +11,7 @@ keywords:
 
 ## TL:DR
 
-This framework defines the governance process for [selected topics](./governance-scope.md) in the Shimmer network. Changes will be proposed using a three-stage process that can result in a vote by Shimmer token holders. The [governance forum](https://govern.iota.org) hosts the discussions and proposals. This framework defines the detailed rules and standardizes decision-making processes that must be followed to make changes in the network. The specification hosted in this Wiki article was created in a proposal to the Shimmer community. Only the defined final specification is hosted here and the parts 1. Simple Summary, 2. Abstract, 3. Motivation, 6. Implementation have been left out of publishing in the Wiki. The full proposal including these sections can be read [here](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md)
+This framework defines the governance process for [selected topics](./governance-scope.md) in the Shimmer network. Changes will be proposed using a three-stage process that can result in a vote by Shimmer token holders. The [governance forum](https://govern.iota.org) hosts the discussions and proposals. This framework defines the detailed rules and standardizes decision-making processes that must be followed to make governance decisions in the network.
 
 ## 4. Governance Specification
 
@@ -23,9 +23,9 @@ The [Governance forum](https://govern.iota.org), [introduced by the IOTA Foundat
 - Phase 2 - Temperature check
 - Phase 3 - Voting
 
-Once an idea successfully passes phase 2, a vote is initiated in phase 3 using the Firefly voting mechanism based on Shimmer token ownership. This method uses the functionalities of the already developed Firefly Governance and the Hornet [INX participation plugin](/inx-participation/welcome) developed and used first in the [Build vs. Burn](https://blog.iota.org/iota-treasury-vote-how-to-take-part/) vote that happened in June 2022.
+Once an idea successfully passes phase 2, a vote is initiated in phase 3 using an on-chain voting mechanism based on Shimmer token ownership. Depending on the type of Proposal this Phase 3 vote happens on the L1 Shimmer Tangle, or the L2 Shimmer EVM network.
 
-**To be accepted and implemented as a vote in Firefly, a governance proposal must successfully pass through the first two phases of the framework that work as a filter mechanism to only allow proposals that fulfill specific criteria to be implemented as a Firefly vote.**
+**To be accepted and implemented as a Phase 3 vote, a governance proposal must successfully pass through the first two phases of the framework that work as a filter mechanism to only allow proposals that fulfill specific criteria to be implemented as a Firefly vote.**
 
 <table>
   <tbody>
@@ -175,7 +175,6 @@ Once an idea successfully passes phase 2, a vote is initiated in phase 3 using t
       <td>
         <ul>
           <li>Poll: 50 votes in favor of the proposal in the last version poll</li>
-          <li>no poll: The latest published post version received 50 likes.</li>
         </ul>
       </td>
       <td>
@@ -239,8 +238,8 @@ Once an idea successfully passes phase 2, a vote is initiated in phase 3 using t
 2. If voted for, the proposal must add positive value and support to the Shimmer ecosystem.
 3. All proposals must not segregate individuals, organizations, or communities based on sex, race, color, ethnic or social origin, genetic features, language, religion or belief, political or any other opinion, membership of a national minority, property, birth, disability, age or sexual orientation.
 4. The proposal’s intent must not have been submitted within the current [submission season](#48-seasons) and follow the [resubmission delay rules](#guaranteeing-stability---resubmital-delay).
-5. The proposal must meet the defined [parameters that are open for governance](./governance-scope.md). All technical proposals relevant to IOTA, Shimmer, and Assembly protocols must be submitted through the standard TIP process.
-6. The proposal should not be directed towards using, requesting, or managing the Shimmer Treasury Funds once a Shimmer Community Treasury DAO is established under its own guidelines and rules. Until the Shimmer Community Treasury DAO has been established, this framework can be used to make decisions on the structure and rules of the Treasury DAO. This governance framework can also be used to make decisions on allocating a budget from the Shimmer community Treasury Wallet to the Shimmer Treasury DAO once the Treasury DAO has been established.
+5. The proposal must meet the defined [parameters that are open for governance](./governance-scope.md). All technical proposals relevant to IOTA, Shimmer, and Assembly protocols that sit outside of this defined scope must be submitted through the standard TIP process.
+
 
 ### 4.3 Defining the stakeholders of the governance process
 
@@ -262,7 +261,7 @@ A proposal can only move forward at the request of the proposal submitter.
 
 This requires the **proactive involvement** of the proposal submitter. After 30 days of inactivity in the forum (no new comments), a proposal is to be rejected and archived by moderators if it has not met the [acceptance requirements](#proposal-acceptance-requirements-phase-1) to move to the next phase.
 
-The moderators or entities like the IOTA Foundation or Node operators will not automatically take action on a proposal if the original proposal submitter does not request this. If a proposal is not followed up within 30 days, it is considered abandoned by the original submitter and will be closed and archived following the guidelines defined. The topic could then be picked up by someone else and resubmitted as a phase 1 discussion post.
+The moderators or other entities involved in the governance process, like the IOTA Foundation or Node operators, will not automatically take action on a proposal if the original proposal submitter does not request to move the proposal to phase 3. If a proposal is not followed up within 30 days, it is considered abandoned by the original submitter and will be closed and archived following the guidelines defined. The topic could then be picked up by someone else and resubmitted as a phase 1 discussion post.
 
 #### Governance Forum voters (phase 2)
 
@@ -274,13 +273,17 @@ The requirements to achieve Trust level 1 are set as follows:
 - has opened a minimum of 3 topics and did read a minimum of 3 topics completely in the forum and,
 - has spent a minimum of 25 minutes (aggregated) reading posts in the forum
 
-#### Firefly voters (phase 3)
+#### On - Chain Voters (phase 3)
 
-Everybody who is in control of the minimum amount of Shimmer tokens required to produce one vote. This amount is currently defined as 1000 Glow and follows the [technical specification](https://github.com/iotaledger/inx-participation) for the Hornet INX - participation plugin.
+Everybody who is in control of the minimum amount of Governance tokens (SMR tokens on L1 or wrapped Shimmer tokens (wSMR) on L2) required to produce one vote. 
+This amount is currently defined as 1000 Glow (0,001 SMR) on L1 or 1 wSMR on SMR EVM.
 
 #### Governance Forum Moderators
 
-To enable an effective governance process, some community members need to handle administrative tasks in the governance process, mainly in the governance forum. The community group that works on governance and meets weekly to discuss these topics has selected five community members to fill these positions. The community can propose to remove moderators through the here-defined governance process.
+To enable an effective governance process, some community members need to handle administrative tasks in the governance process, mainly in the governance forum. The community group that works on governance and meets weekly to discuss these topics has selected four community members to fill these positions. The community can propose to remove moderators through the here-defined governance process.
+
+In addition to the purely administrative tasks, this group of community members has the duty to implement the Phase 3 Treasury votes in the Shimmer EVM Governance system. For this purpose, they are operating a Gnosis Multisignature Wallet [address]. This Mutisignature Wallet is granted administrator rights in the Tally Governance Dashboard, and the MultiSig-address is one of only two allow listed addresses that can add a proposal to the system. 
+This gives the Governance moderators the function to act as a trusted guard which avoids implementing malicious or faulty proposals into the system that could attempt to steal the Assets held in the Community Treasury Address.
 
 Currently, the following community members are selected as governance forum moderators:
 [@Deep_Sea](https://govern.iota.org/u/deep_sea/summary), [@Werner](https://govern.iota.org/u/werner/summary), [@overclocked](https://govern.iota.org/u/overclocked/summary), [@AndyW](https://govern.iota.org/u/andyw/summary)
@@ -295,82 +298,100 @@ Currently, the following community members are selected as governance forum mode
 - Ensure that phase 2 polls and phase 3 votes are published following the [specified timelines](#49-timing--planning-of-proposals-and-votes)
 - Before approving a phase 2 poll into phase 3, ensure that there has been no successful [counter proposal](#47-counter-proposals) submitted.
 - If a Phase 2 poll is accepted, inform the community by posting about the poll from the [Shimmer Governance Twitter account](https://twitter.com/ShimmerGov).
-- If the requirements are not met, inform the initiator that the proposal misses specific requirements via a private message and keep the proposal unpublished until the requirements for accepting the post are met.
-- Support the initiator of a proposal if they lack the technical skills to create the executable participation event that will be uploaded to the nodes for a phase 3 Firefly vote.
-- Merge the participation event in the [Github “participation events” repository](#414-hosting-of-the-participation-events-for-governance-votes-on-github) if approval for phase 3 vote has been granted by two moderators or one moderator and one administrator.
-- If a phase 2 poll has successfully met all [requirements](#proposal-acceptance-requirements-phase-2) to become a phase 3 Firefly vote, publish an [announcement post](#the-announcement-forum-post-in-phase-3-uses-this-template) under the [Phase 3 vote announcements](https://govern.iota.org/c/shimmer-governance-proposals/phase-3-vote-announcements/54) subcategory following a specific template that includes the unique identifier, the link to the phase 2 discussion, and the time and date when the phase 3 vote begins in Firefly. This announcement post is locked from comments and serves only as information to forum users.
+- If the requirements are not met, inform the initiator that the proposal misses specific requirements via a private message and keep the proposal unpublished until the requirements for accepting the post are met, or the proposer dismisses the proposal.
+- Support the initiator of a proposal if they lack the technical skills to create the executable participation event that will be uploaded to the nodes for a phase 3 governance Firefly vote.
+- Merge the participation event in the [Github “participation events” repository](#414-hosting-of-the-participation-events-for-governance-votes-on-github) 
+    - if approval for phase 3 vote has been granted by three moderators or two moderators and one administrator.
+    - If a phase 2 poll has successfully met all [requirements](#proposal-acceptance-requirements-phase-2)
+- In case of a Treasury spending proposal, submit the Phase 3 vote via the admin account in the Tally dashboard via the moderator's Multi-Signature Wallet. Every MultiSig signer is required to verify the correctness of the submitted transaction data independently. If any errors or suspicious activities in the proposed spending are detected, immediately inform all other moderators about this and halt further signings untill the issues have been analyzed and cleared.
+- Publish an [announcement post](#the-announcement-forum-post-in-phase-3-uses-this-template) under the [Phase 3 vote announcements](https://govern.iota.org/c/shimmer-governance-proposals/phase-3-vote-announcements/54) subcategory following a specific template that includes the unique identifier, the link to the phase 2 discussion, and the time and date when the phase 3 vote begins. This announcement post is locked from comments and serves only as information to forum users.
 - Publish this announcement post from the Shimmer governance Twitter account.
-- Inform one of the IOTA Foundations community managers that a vote in Firefly is planned so that the IF comms department can schedule the social media posts to inform the wider community about the upcoming vote.
-- Move finished or declined proposals (phase 1, phase 2, or phase 3) to a separate subcategory [Proposal Archive](https://govern.iota.org/c/shimmer-governance-proposals/proposal-archive/55) in the forum for ended proposals. Proposals moved to the archive will be tagged accordingly [accepted] or [declined].
-- If a Firefly vote has been conducted, edit the phase 3 announcement post to include a link to the validated results of the vote published on GitHub.
-- Observe the forum and the governance process and propose required adjustments to the [parameters under probation](#specification-parameters-under-probation) after consent in the moderator group has been achieved.
-- Prepare the [seasonal vote](#48-seasons) to ratify the new seasonal specification that includes all recently made changes.
-- Moderators will manage discussions during the phases to ensure they are not disrespectful and focus on the proposal topic in a positive manner.
-- If a participant is aggressive during the discussions and continues to add negative comments within a discussion thread, a minimum of 2 moderators and one admin should discuss and ban a member if decided upon. Guiding principles are described in the forum's [Terms of Service](https://govern.iota.org/tos) that regulate all users' activities. They build the foundation for all moderator actions regarding moderation.
+- Inform one of the IOTA Foundations community managers that a Phase 3 vote is happening so that the IF comms department can schedule the social media posts to inform the wider community about the upcoming vote.
+- Move finished or declined proposals (phase 1, phase 2, or phase 3) to a separate subcategory [Proposal Archive](https://govern.iota.org/c/shimmer-governance-proposals/proposal-archive/55) for ended proposals. Proposals moved to the archive will be tagged accordingly [accepted] or [declined].
+- After a phase 3 vote has been conducted, add a reply to the phase 3 announcement post to include a link to the validated results of the vote.
+- Observe the forum and the governance processes and propose required adjustments to the [parameters under probation](#specification-parameters-under-probation) after consent in the moderator group has been achieved.
+- Moderate forum discussions during the phases to ensure they are not disrespectful and focus on the proposal topic in a positive manner.
+- If a participant is aggressive during the discussions and continues to add negative comments within a discussion thread, a minimum of 2 moderators and one admin should discuss and ban a member if decided upon. Guiding principles are described in the forum's [Terms of Service](https://govern.iota.org/tos) that regulate all users' activities. These TOS build the foundation for all moderation actions.
 - If a submittal is rejected, a moderator or admin will write a brief (one to three sentence) summary stating how the submittal did not follow guiding principles and/or the defined requirements set for submittals.
-- The forum moderators will only be granted access to the functionalities required to fulfill the above-described tasks in the forums [Governance] section. This does not provide special access to other administrative functions or the [Research] section of the forum.
+- The forum moderators will only be granted access to the functionalities required to fulfill the above-described tasks in the forums [Governance] section. This does not provide special access to other administrative functions in the [Research] section of the forum.
 
 #### Governance Forum admins
 
 Employees of the IOTA Foundation which have full access to all functionalities of the Forum. They are responsible for granting moderation rights to the selected [Governance Forum Moderators](#governance-forum-moderators). They can act as Forum moderators if no forum moderator is available to fulfill a required task.
 Currently, these IF members are Forum admins: @antonio.nardella @Phylo @anyong @mark.schmidt @Junwei
 
+#### Tangle Ecosystem Association Multi Signature Wallet
+
+This Multisignature Wallet is set up as a 3 of 5 MultiSig. Signers are [add members]. The TEA Multisig Wallet is the second Allow listed proposal submitter in the Shimmer EVM Governance System. This has been implemented as a fallback option in case any unfortunate events happen that will make it impossible for the Governance Moderator MultiSignature Wallet to implement a proposal into the System. In that case, the TEA Multisig can input a Phase 3 Treasury Vote into the System to ensure the functionality of the Governance process. The TEA MultiSig will only come to action if the Governance Modertor MultiSig is unavailable, compromised, or unresponsive.
+
+#### Time Lock Admin Multi Signature Wallet
+
+The Time Lock Multisignature Wallet holds administration rights to core functionalities of the `timelock controller` contracts in the Shimmer EVM Governance system. It can revoke admin rights from the `governor executor` contract. It can change the `timelock period` and halt the execution of scheduled spending from the timelock contract. This is the final emergency guard that could be used to counter a governance attack on the community treasury wallet and will be used if such an attack is detected during the `timelock period` to protect the community-owned assets from theft.
+
 ### 4.4 Phase 1 - Discussion phase
 
 Getting feedback on an idea, adapting it, and including input from others is the primary goal of phase - 1. The Governance forum has a specific category [Shimmer Governance Proposals](https://govern.iota.org/c/shimmer-governance-proposals/51) where this process is hosted. The Discussions phase starts in the [Shimmer Governance Proposals / Phase 1 - Discussion](https://govern.iota.org/c/shimmer-governance-proposals/phase-1-discussions/52) subcategory.
 
-Phase 1 initiates the start of a proposal’s lifecycle. Anyone that has reached [trust level 1](#governance-proposal-submitter-phase-1) in the governance forum can step forward and propose a change to [certain](./governance-scope.md) aspects of the Shimmer network.
+Phase 1 initiates the start of a proposal’s lifecycle. Anyone that has reached [trust level 1](#governance-proposal-submitter-phase-1) in the governance forum can step forward and add a proposal about [certain](./governance-scope.md) aspects of the Shimmer network.
 
-The discussion phase must be used to refine the idea to a point where it can be boiled down to either one or two clearly defined options. It may be required that the proposal submitter puts up several polls during the discussion to present a clearly defined and specified concept to the voters in the following phase 2 poll.
+The phase 1 discussion phase shall be used to refine the idea to a point where it can be specified into a question and either one or two clearly defined answer options. It may be required that the proposal submitter puts up several polls during the discussion to present a clearly defined and specified concept to the voters in the following phase 2 poll.
 
-All posts in the forum that a trust level 1 member submits are automatically locked from editing 5 minutes after publishing. This means that if a proposal submitter wants to implement some changes in the phase 1 proposal after it has been approved and published by a moderator, the following process needs to be followed (also by members of higher trust levels):
-
-- Close the current topic so that no more comments are possible.
-- Submit a new post as a phase 1 Discussion with the same topic title and add Version 2, 3, 4, … to the title
-- Directly reference the previous discussion by including a link to the previous post in the new version.
+As this can mean that several changes to a proposal happen, the following process is required to make community members aware of those changes:
+The proposal submitter must
+- implement the changes by editing the phase 1 post text
+- Add a changelog to the beginning of the phase 1 post that explicitly states all changes that happened to the document. This changelog shall inform the readers of 
+    - When did the change happen?
+    - What was the previous text?
+    - What is the new text?
+    - Why was the text changed?
+- Any time a phase 1 proposal text is changed, the proposal submitter has to add a reply to his post that includes a new Poll asking the forum members to support the newly edited version of the proposal.
+- Only if the last Poll conducted for the latest change of a phase 1 proposal has fulfilled the [phase 2 acceptance requirements] can the proposal move to phase 2
 - Follow this process until the proposal submitter is sure that the final version of the proposal has matured and can be formulated as a phase 2 proposal.
 
-The outcome of this process in phase 1 should be a defined and specified proposal ready to be put up for a community poll in phase 2 and implemented in a Firefly vote in phase 3.
+The outcome of this process in phase 1 should be a defined and specified proposal ready to be put up for a community poll in phase 2.
 
 To initiate an idea's discussion and decision-making process, a [forum moderator](#governance-forum-moderators) will only allow a post to be published in the [Shimmer Governance Proposals / Phase 1 Discussions](https://govern.iota.org/c/shimmer-governance-proposals/phase-1-discussions/52) subcategory and grant the phase 1 status to a discussion if the topic of the proposal fits one of the [defined Governance parameters](./governance-scope.md) and follows the Shimmer governance framework [guiding principles.](#42-shimmer-governance-framework-guiding-principles)
 
 ##### Proposal Acceptance Requirements Phase 1:
 
-- Discussion topic created in the governance forum under the [Governance Proposals / Phase 1 - Discussion](https://govern.iota.org/c/shimmer-governance-proposals/phase-1-discussions/52) subcategory tagged with phase 1
+- Discussion topic created in the governance forum under the [Governance Proposals / Phase 1 - Discussion](https://govern.iota.org/c/shimmer-governance-proposals/phase-1-discussions/52) subcategory tagged with "phase 1" and either "governance proposal", or "treasury proposal" by the submitter.
 - Duration: topics close automatically after 30 days of inactivity.
 - The post must be written in English language
+- The post includes a poll. The question of the poll must state "Do you support this proposal?", and one answer option of the poll must be "yes".
 - The post must follow the [Shimmer Governance framework guiding principles](#42-shimmer-governance-framework-guiding-principles).
-- A phase 1 topic post needs approval by a moderator and receives the phase 1 tag once it is approved to be published.
-- It can only receive a phase 1 tag and become a governance proposal if it discusses one of the parameters [open for community governance](./governance-scope.md), follows the [guiding principles](#42-shimmer-governance-framework-guiding-principles) and does not conflict with the [resubmittal delay rules](#guaranteeing-stability---resubmital-delay).
+- A phase 1 topic post needs approval by a moderator and is granted the phase 1 tag once it is approved to be published.
+- It can only receive a phase 1 tag and become a valid proposal if it discusses one of the parameters [open for community governance](./governance-scope.md), follows the [guiding principles](#42-shimmer-governance-framework-guiding-principles) and does not conflict with the [resubmittal delay rules](#guaranteeing-stability---resubmital-delay).
 
 ##### Requirements for a phase 1 proposal to move forward in the process and become a phase 2 temperature check proposal:
 
-- The latest version of the proposal posted by the proposal submitter has either received 50 likes or the latest poll created by the proposal submitter on the latest version of the proposal has received 50 votes in favor of the proposal.
+- The latest published version of the proposal posted by the proposal submitter has received 50 "yes" votes in favor of the proposal.
 
 ##### Requirements to close a proposal in phase 1
 
-- Topics that have been approved as a phase 1 but have not seen any activity (comments/likes) on the topic for more than 30 days will be automatically closed by the system and then removed from the category and archived by a moderator in the [Proposal archive](https://govern.iota.org/c/shimmer-governance-proposals/proposal-archive/55) category
+- If the proposal has not seen any activity (comments/votes) for more than 30 days it  will be automatically closed by the system and then removed from the category and archived by a moderator in the [Proposal archive](https://govern.iota.org/c/shimmer-governance-proposals/proposal-archive/55) category
 - The proposal can also be closed and archived at any time by written request of the proposal submitter to a governance forum moderator.
 
 ### 4.5 Phase 2 - Temperature check phase
 
-The [Governance Proposal submitter](#governance-proposal-submitter-phase-1) feels confident that the proposal includes everything he or she deems necessary. Hence, a solid and specified proposal has been developed, considering suggestions and refinements raised in phase 1. The proposal is structured using the provided [Governance proposal template](#412-governance-proposal-template-phase-2--3--emergency-proposal) which is implemented as a preconfigured template for all posts in the [Phase 2] - Temperature check subcategory. The submission contains a 7-day lasting Poll conducted by the [Governance Forum voters](#governance-forum-voters-phase-2). If the poll receives enough engagement, it signals support and confidence that the community wants to do a public vote on the manner, which will then be part of the following phase 3.
+After the phase 1 discussions, the [Governance Proposal submitter](#governance-proposal-submitter-phase-1) feels confident that the proposal includes everything he or she deems necessary. Hence, a solid and specified proposal has been developed, considering suggestions and refinements raised in phase 1. The proposal is structured using the provided [Governance proposal template](#412-governance-proposal-template-phase-2--3--emergency-proposal) which is implemented as a preconfigured template for all posts in the Phase 2 - Temperature check subcategory. The submission contains a 7-day lasting poll conducted by the [Governance Forum voters](#governance-forum-voters-phase-2). If the poll receives enough engagement, it signals support and confidence that the community wants to do a public vote on the proposal, which will then be part of the following phase 3.
 
-Phase 2 polls are non-binding decisions and only show sentiment in the community that allows distinguishing if a topic receives enough support to justify a vote in Firefly. All changes to the Shimmer protocol will require a decision by all Shimmer token holders in a phase 3 vote in Firefly.
+Phase 2 polls are non-binding decisions and only show sentiment in the community that allows distinguishing if a topic receives enough support to justify an on-chain vote among token holders. 
 
 ##### Proposal Acceptance Requirements Phase 2
 
 - A Governance Proposal post was created in the governance forum under the [Shimmer Governance Proposals / Phase 2 - Temperature check](https://govern.iota.org/c/shimmer-governance-proposals/phase-2-temperature-check/53) subcategory and tagged with “phase 2”.
+- The proposer specifies if the Proposal asks for spending Treasury funds or modifiying parameters of the Shimmer EVM Governance system, or is a general governance proposal. The proposer does this by adding the tag "Treasury Proposal" or "Governance Proposal" to the Phase 2 post.
 - The proposal links to the phase 1 discussion conducted beforehand. If no phase 1 discussion was conducted, the phase 2 post request will be rejected by the moderators.
-- The phase 2 proposal is posted by the same [proposal submitter](#governance-proposal-submitter-phase-1) that had posted the corresponding phase 1 proposal that started the discussion.
+- The phase 2 proposal is posted by the same [proposal submitter](#governance-proposal-submitter-phase-1) that had posted the corresponding phase 1 proposal which started the discussion.
 - A phase 2 temperature check poll can only begin on specified dates:
   - The first and 3rd Monday of a month before 4 pm UTC and lasts seven days. Moderators ensure that the poll gets published on these days and times.
   - To ensure this, the phase 2 post must be submitted at least 24 hours before the start date of the poll (which is Monday at 4 pm UTC). Proposals that get posted later than 24 hours before the deadline can not be included in the phase 2 period and will have to wait until the next phase 2 period opens (2 weeks later)
-- The proposal uses the provided [template](#412-governance-proposal-template-phase-2--3--emergency-proposal) for governance proposals. The proposal template requires all submissions to speak to relevant fields, such as a Simple Summary, Abstract, Motivation, Specification, and Implementation. The template is implemented by default in every post in the [Phase 2] subcategory and shall not be altered besides removing the descriptions in blockquote.
-- The text for the participation event is part of the post and contains the exact question and answers. The text is 100% identical to the text used in the poll.
+- The proposal uses the provided [template](#412-governance-proposal-template-phase-2--3--emergency-proposal) for phase 2 proposals. The proposal template requires all submissions to speak to relevant fields, such as a Simple Summary, Abstract, Motivation, Specification, and Implementation. The template is implemented by default in every post in the [Phase 2] subcategory and shall not be altered besides removing the descriptions in blockquote.
+- In case of a "Governance Proposal", the text for the participation event is part of the post and contains the exact question and answers. The text is 100% identical to the text used in the poll.
+- In case of a "Treasury Proposal", it contains the exact transaction data for the requested spending as defined in the proposal template for Tresury proposals.
 - The proposal receives a [unique identifier](#unique-identifier) from a forum moderator with an increasing number. This identifier will follow the proposal through all stages of the governance process. The Identifier follows the form: SGP - 0000 (SGP stands for Shimmer Governance Proposal). The unique identifier is taken from the [public Notion page](https://shimmergov.notion.site/18af77a6634f4d9d91b7c16d9f294fbd?v=dcd7703eac1e4dd3b5302bf533546cb3).
 - The proposal contains a [poll](https://meta.discourse.org/t/how-to-create-polls/77548) created by the [proposal submitter](#governance-proposal-submitter-phase-1). This poll must always include the option “Make no changes”.
-- Besides the option “make no changes”, the poll can only contain one or two different other options. So it is either a “Yes / No changes” or an “Option 1 / Option 2 / No changes” vote.
+- Besides the option “No, make no changes” and "Abstain", the poll can only contain one or two different other options. So it is either a “Yes / No / Abstain” or an “Option 1 / Option 2 / Abstain / No changes” vote.
 - The text of the whole proposal and poll is not allowed to be edited in phase 2 after the moderators approved it.
 - Poll duration must be set to 7 days
 - Poll option “limit voting to these groups” must be set to: [trust_level_1 & trust_level_2 & trust_level_3 & trust_level_4]
@@ -378,40 +399,90 @@ Phase 2 polls are non-binding decisions and only show sentiment in the community
 - Editing any proposal or poll text is only allowed in the first 5 minutes after publishing the text. The forum settings block further editing of posts.
 - If the proposal submitter becomes aware of an error in the text after these initial 5 minutes, he can request that the post gets removed by a moderator by posting a public comment with this request and tagging the @Governance_moderator group under the topic.
 - Resubmittal of a corrected proposal version in phase 2 is only possible on the next proposal round (The first or 3rd Monday of a month) and after a moderator approves the corrected post.
-- Accepted phase 2 polls will be announced by the official [Shimmer Governance Twitter account](https://twitter.com/ShimmerGov) and reposted by the Shimmer network main account run by the IF.
+- Accepted phase 2 polls will be announced by the official [Shimmer Governance Twitter account](https://twitter.com/ShimmerGov) and reposted by the Shimmer network main account (@shimmernet) run by the IF.
 
 ##### Requirements to win a phase 2 poll in the forum and qualify to process to phase 3
 
-- The Poll must receive a minimum of 100 votes in favor of the proposal.
+- Either the option "Yes", or one of the two options besides "No, make no changes" and "Abstain" (depending if the proposla included 2 options or only one) must receive a minimum of 100 votes.
 
 ##### Requirements to close a proposal in phase 2
 
-- If the minimum votes are not reached in the specified time, the phase 2 poll is marked [declined] and archived in the [Proposal archive](https://govern.iota.org/c/shimmer-governance-proposals/proposal-archive/55) category by a moderator
-- The proposal can be closed and archived at any time by written request of the proposal submitter to a governance forum moderator.
+- If the minimum required votes are not reached in the specified time, the phase 2 poll is marked [declined] and archived in the [Proposal archive](https://govern.iota.org/c/shimmer-governance-proposals/proposal-archive/55) category by a moderator
+- The proposal can be closed and archived at any time during the poll period by written request of the proposal submitter to a governance forum moderator.
 
 ### 4.6 Phase 3 - Voting
 
-The final decision if we shall change a parameter in the Shimmer network is conducted through a Sybill-protected and transparent network-wide vote asking the whole community of Shimmer token holders to make a decision. All other phases before this vote are just steps to get feedback on community sentiment on an idea and do not have any binding character. But a phase 3 vote in Firefly has protocol-wide consequences and represents a binding decision by the community.
+The final decision if a proposal shall be executed is conducted through a Sybill-protected and transparent network-wide vote asking the whole community of Governance token holders to make a decision. All other phases before this vote are just steps to get feedback on community sentiment on a proposal and do not have any binding character. But a phase 3 vote has protocol-wide consequences and represents a binding decision by the community.
 
-The IOTA community has developed a technical solution for the [BUILD vs. BURN](https://blog.iota.org/iota-treasury-vote-how-to-take-part/) Treasury vote. Firefly and the Hornet nodes are also prepared to conduct these votes in the Shimmer network using the same technology.
+Depending on the proposal type, we have 2 different processes with different technical implementations how a Phase 3 vote is conducted:
 
-The [process](https://github.com/iota-community/treasury/blob/main/specifications/hornet-participation-plugin.md) created for the Build vs. Burn vote already has functionalities implemented to protect the vote from the influence of short-time speculators by using a time-based build-up of voting weight and has proven to be efficient and user-friendly.
+**Phase 3 Treasury Proposal Vote**
+A proposal to spend funds from the community Treasury Wallet held in the Shimmer EVM Governance Contract, or to change parameters of the Shimmer EVM Governance system, is conducted via the process described in Chapter **4.6.1.**
+**Phase 3 Governance Proposal Vote**
+All other proposals that do not seek to access funds from the community Treasury Wallet or change a parameter of the EVM Governance system are conducted via the proccess described in Chapter **4.6.2.**
 
-For a network-wide vote by all token holders, all required voting preparations must be in place before a phase 3 vote gets announced. These preparations include creating a [participation event](#participation-event) by the proposal submitter (forum moderators can support upon request of the Proposal submitter) that can be implemented into Hornet nodes. This participation event is based on the [specifications](https://github.com/iota-community/treasury/blob/main/specifications/hornet-participation-plugin.md) designed for the Treasury vote.
+### 4.6.1 Phase 3 Treasury Proposal Vote Shimmer EVM network
+
+A proposal seeking to spend funds from the Shimmer community Treasury held at Governance contract [insert address] has to undergo an on chain vote following the Shimmer EVM Governance process. This includes the following rules and procedures:
+
+| Parameter        | Value            | Remarks                   |
+| ---------------- | ---------------- | ------------------------- |
+| Governace Token  | wSMR             | contracts address:        |
+| Max Supply wSMR  | 1.813 Billion    |                           |
+| 1 vote equals    | 1 wSMR           |                           |
+| Voting delay     | 7 days           | adjusteable by governance |
+| Voting Period    | 7 days           | adjusteable by governance |
+| Time Lock Period | 3 days           | adjusteable by governance |
+| Quorum           | 60 million votes | adjusteable by governance |
+| Allowlisted Proposer|Governance Moderator Multisig [address:], Tangle Ecosystem Association Multisig [address:]|                           |
+
+**Voting Process:**
+Once a Treasury spending proposal has successfully passed Phase 2, the Governance moderators are responsible to include the proposal into the Shimmer EVM Governance system via their Multisignature Wallet. 
+The exact voting procedure is described in the [Shimmer EVM Governance Documentation]
+For a network-wide vote by all token holders, all required voting preparations must be in place before a phase 3 vote gets announced and added to the system.
+
+**Adding the proposal to the EVM Governance System:**
+The Tally Admin Interface [URL link] allows the Governance moderators to specify:
+- Proposal Title and Unique Identifier number
+- Proposal question and additional info text 
+- Asset(s) to be transacted (contract address)
+- Amount of Assets to be transacted
+- Receiver address of the Assets
+
+Only 2 allowlisted accounts have access to this admin functionality in Tally. This Allowlisted accounts are:
+- Governance moderator Multisig [contract address]
+- Tangle Ecosystem Association Multisig [contract address]
+
+One Governance Moderator submitts the proposal based on the submission data of the Phase 2 proposal. Every single Governance moderator is responsible to individualy check and confirm the correctness of the submitted data to be 100% aligned with the specified transaction data submitted in the Phase 2 Poll and to verify that the receiving address represents the correct address of the asset receiver as specified in the proposal. 
+Only once the Governance Moderator has ensured that this is correct is he allowed to sign the transaction in the Gnosis Multisignature Wallet to initiate the voting process.
+**The number of required Multisignature Signers is 3 of 4**
+
+**Phase 3 Treasury Vote announcement:**
+A forum moderator publishes an [announcement post](#the-announcement-forum-post-in-phase-3-uses-this-template) under the [Phase 3 vote announcement](https://govern.iota.org/c/shimmer-governance-proposals/phase-3-vote-announcements/54) subcategory stating that the proposal has successfully passed the requirements to be implemented as a vote in the Shimmer EVM Governance System. The announcement post includes a link to the phase 2 discussion and states the time and date when the phase 3 vote begins. This post is “locked” without options to comment and only serves as information to the community.
+
+The same announcement will also be posted on the [Shimmer Governance Twitter account](https://twitter.com/ShimmerGov), which the moderators run.
+
+
+
+### 4.6.2 Phase 3 Governance Vote Shimmer L1 network
+
+The IOTA community has developed a technical solution for the [BUILD vs. BURN](https://blog.iota.org/iota-treasury-vote-how-to-take-part/) Treasury vote. Firefly and the Hornet nodes are also prepared to conduct these votes in the Shimmer L1 network using the same technology.
+
+For a network-wide vote by all token holders, all required voting preparations must be in place before a phase 3 vote gets announced. These preparations include creating a [participation event](#participation-event) by the proposal submitter (forum moderators can support upon request of the Proposal submitter) that can be implemented into Hornet nodes. This participation event follows this [specifications](https://github.com/iota-community/treasury/blob/main/specifications/hornet-participation-plugin.md).
 
 The participation event needs to be merged by a forum moderator or admin into the respective [Github branch reserved for Shimmer voting participation events](https://github.com/iota-community/Shimmer-governance-participation-events/tree/master/events/vote) before the phase 3 vote can be announced, so that node operators can implement it from this repository.
 
-In this stage, it is required that two forum moderators or one moderator and one admin double-check that all requirements are in place to approve publishing the phase 3 vote announcement. Merging the event in the GitHub repository requires merging rights. These rights can be given to the forum moderators but currently reside with @antonio.nardella and @Phylo.
+In this stage, it is required that three forum moderators double-check that all requirements are in place to approve publishing the phase 3 vote announcement. Merging the event in the GitHub repository requires merging rights. These rights can be given to the forum moderators but currently reside with @antonio.nardella and @Phylo.
 
 A forum moderator publishes an [announcement post](#the-announcement-forum-post-in-phase-3-uses-this-template) under the [Phase 3 vote announcement](https://govern.iota.org/c/shimmer-governance-proposals/phase-3-vote-announcements/54) subcategory stating that the proposal has successfully passed the requirements to be implemented as a vote in Firefly. The announcement post includes a link to the phase 2 discussion and states the time and date when the Firefly phase 3 vote begins. This post is “locked” without options to comment and only serves as information to the community.
 
 The same announcement will also be posted on the [Shimmer Governance Twitter account](https://twitter.com/ShimmerGov), which the moderators run.
 
-##### The announcement forum-post in phase 3 uses this template:
+##### The announcement forum-post in phase 3 uses these templates:
 
 _[Phase 3] Shimmer Governance Vote announcement:_
 
-_The proposal [unique identifier and title] has reached soft consensus by the community in the governance forum phase 2 poll [link to the phase 2 poll]. It has fulfilled all requirements to be presented to the community in a governance vote using the Shimmer Firefly Wallet._
+_The proposal [unique identifier and title] has reached soft consensus by the community in the governance forum phase 2 poll [link to the phase 2 poll]. It has fulfilled all requirements to be presented to the community in a Phase 3 vote._
 
 _The vote in your Shimmer Firefly Wallet will begin on [date and time in UTC] with a seven-day pre-vote phase during which you can cast your vote before the counting phase begins._
 
@@ -425,53 +496,91 @@ _Question: [copy text from the participation event]_
 
 _Answer 1: [copy text from the participation event]_
 
-_Answer 2: [Make no changes]_
+_Answer 2: [Abstain]_
+
+_Answer 3: [No, Make no changes]_
 
 _Node operators that want to participate in counting this vote can add the participation event to their nodes from this link: [link to the raw event hosted in Github]._
 
+_[Phase 3] Shimmer Treasury Vote announcement:_
+
+_The proposal [unique identifier and title] has reached soft consensus by the community in the governance forum phase 2 poll [link to the phase 2 poll]. It has fulfilled all requirements to be presented to the community in a Phase 3 vote._
+
+_Please visit the Shimmer Treasury Governance space on Tally under [URL] and ensure that you hold wSMR tokens in your Shimmer EVM Wallet. Please setup delegation of your voting power either to yourself, or to an delegate of your choice. You will have seven days time to setup the voting delegation untill [date and time in UTC]._ 
+
+_The seven days voting period where you can vote on the proposal in case you delegated to yourself starts on [date and time in UTC]._ 
+
+_The voting period ends on [date and time in UTC]._
+
+
+_[Treasury vote title] [unique identifier]:_
+
+_Question: [copy text from the participation event]_
+
+_Answer 1: [Yes]_
+
+_Answer 2: [Abstain]_
+
+_Answer 3: [No, Make no changes]_
+
+
 ##### Proposal Acceptance Requirements Phase 3
 
+**For a "Phase 3 Governance Vote":**
 - [Successful phase 2 poll](#requirements-to-win-a-phase-2-poll-in-the-forum-and-qualify-to-process-to-phase-3)
-- The Proposal Submitter has created a [participation event](#participation-event) in [Github](https://github.com/iota-community/Shimmer-governance-participation-events) containing the JSON file for the vote, following the [specifications](https://github.com/iota-community/treasury/blob/main/specifications/hornet-participation-plugin.md) described in the IOTA Treasury vote process.
+- The Proposal Submitter has created a [participation event](#participation-event) in [Github](https://github.com/iota-community/Shimmer-governance-participation-events) containing the JSON file for the vote, following the [specifications](https://github.com/iota-community/treasury/blob/main/specifications/hornet-participation-plugin.md).
 - The name of the participation event file in Github must begin with the [unique identifier](#unique-identifier) of the proposal - given by a forum moderator, followed by the proposal title.
 - The text of the participation event in the “additional info” section must contain the URL of the phase 2 post in the governance forum so that voters in Firefly have the direct link to review the proposal and all discussions that did lead to the vote.
 - The text of the “vote question” in the participation event must begin with the unique identifier of the proposal following the form
   - SGP - xxxx: _(followed by the Text of the proposal question)_
-- One “answer” in the participation event must be “Make no changes.”
-- The text of questions and answers is identical to the text used in the phase 2 poll for the question and answers
+- One “answer” in the participation event must be “No, Make no changes.” Another answer in the participation event must be "Abstain".
+- The text of questions and answers is identical to the text used in the phase 2 poll.
 - Vote Duration: The created participation event used in the vote must contain seven day “commencing” period starting on the milestone that defines Thursday 01:00 pm UTC, directly followed by a 7-day “counting” period.
-- Accepted phase 3 votes will be announced by the official [Shimmer Governance Twitter account](https://twitter.com/ShimmerGov) and by the Shimmer network main account, which the IF runs.
+
+**For a "Phase 3 Treasury Vote":**
+- [Successful phase 2 poll](#requirements-to-win-a-phase-2-poll-in-the-forum-and-qualify-to-process-to-phase-3)
+- The Proposal Submitter has added the required Transaction data as defined in the [proposal template]
+- The text of the “proposal question” must begin with the unique identifier of the proposal following the form
+  - SGP - xxxx: _(followed by the Text of the proposal question)_
+- The text of questions and answers is identical to the text used in the phase 2 poll.
 
 ##### Requirements to win a phase 3 vote
 
-- The option that wins the phase 3 vote in Firefly must receive a result with a [simple majority](#simple-majority) of votes counted for this option by the hornet nodes participating in the counting. The phase 3 vote must reach a quorum of 5% of the [maximum achievable votes](#maximum-achievable-votes) (based on the [circulating supply](#total-supply--circulating-supply) of Shimmer & the defined counting period in milestones) to be accepted as valid.
-- The number of circulating Shimmer tokens used to calculate the vote results is based on the circulating supply of Shimmer at the milestone “counting start.”
+Phase 3 Governance Vote:
+- The option that wins the phase 3 vote in Firefly must receive a result with a [majority](#simple-majority) of votes counted for this option by the hornet nodes participating in the counting. The phase 3 vote must reach a quorum of 5% of the [maximum achievable votes](#maximum-achievable-votes) (based on the [circulating supply](#total-supply--circulating-supply) of Shimmer & the defined counting period in milestones) to be accepted as valid.
 - If the simple vote majority achieved in the vote signals the result, “Make no changes”, the proposal will not be accepted and will be considered closed and rejected.
+
+Phase 3 Treasury Vote:
+- The Governance system in the Shimmer EVM requires the following conditions met at the end of `voting period` to deem a proposal as passed and allow relase of funds from the TimeLock Contract after the `voting period` has ended and the `time lock period` is over:
+    - [Majority](#simple-majority)(50% + 1) of `votes` voted "For" the proposal.
+    - Summ of "For" and "Abstain" votes is larger than the required `quorum`
 
 ### 4.7 Counter proposals
 
-We may see that some specific topics will receive intensive discussions, and there may be fractions that strongly oppose a proposed change. In that case, a group might want to address the same topic with an entirely different approach. If this is the case, they may create a counter-proposal opposing a discussed proposal. Such a counter proposal must be named as a proposal that aims to counter an already existing proposal by its proposal submitter by calling it “counter-proposal” and adding a link to the proposal it opposes.
+We may see that some specific topics will receive intensive discussions, and there may be individuals that strongly oppose a proposed change or fund spending. In that case, a group might want to address the same topic with an entirely different approach. If this is the case, they may create a counter-proposal opposing a discussed proposal. Such a counter proposal must be named as a proposal that aims to counter an already existing proposal by calling it “counter-proposal” and adding a link to the proposal it opposes.
+
+A Counter proposal can only be submitted to a Proposal as long as this is in Phase 1. To make it valid, the counter proposal also needs to reach the required 50 supportive votes / likes.
 
 A counter-proposal will lead to the situation that a phase 2 poll will need to be conducted with both proposed solutions as voteable options (the original proposal and the counter-proposal) to decide which of the two will be presented to Voters in Firefly.
 
-This means that once a proposal has reached enough support in phase 1 and would move to phase 2, the moderators will need to check if an active counter-proposal is submitted. If no counter-proposal is submitted, the proposal will go through the normal process of phase 2.
+This means that once an original proposal has reached enough support in phase 1 and all requirements are fullfilled to move it to phase 2, the moderators will need to check if an active counter-proposal is submitted. If no counter-proposal is submitted, the proposal will go through the normal process of phase 2.
+In case a Counter proposal is active, but has not yet reached the required support in Phase 1, the counter Proposal has failed and the original proposal will move into the standard Phase 2 Poll state.
 
-If a counter-proposal has been published and submitted, a runoff poll between the proposals will be conducted if the following conditions are met:
+If a counter-proposal has been published and submitted and has received the required support in Phase 1 before the original Proposal is ready to mave to Phase 2, Phase 2 will be conducted as a runoff poll between the proposals.
 
 ##### Conditions for the runoff poll
 
-- The counter-proposal reaches the required 50 likes/votes in Phase1 during the seven-day poll timeframe that the original proposal spends in phase 2. In that case, the runoff poll will be started directly (on the same day) after the initial phase 2 poll has finished successfully (meaning the original proposal has reached 100 votes in favor of the proposal).
-- This runoff poll will only contain the original proposal and the runoff proposal(s) as options in the poll and will not include the “Make no changes” option.
-- If the counter-proposal fails to receive enough likes until the original proposals phase 2 poll is finished, the counter-proposal has failed, and the original proposal will go the usual way towards phase 3 (if all requirements are met)
-- The counter-proposal will be deemed as declined when:
-  - It fails to receive 50 votes/likes in phase 1, while the original proposal resides in the seven-day phase 2 poll.
+- The counter-proposal reaches the required 50 likes/votes in Phase1 24 hours before the Phase 2 vote of the original Proposal starts.
+- This following runoff poll will only contain the original proposal and the runoff proposal(s) as options in the poll and will not include the “Make no changes” option.
+- If the counter-proposal fails to receive enough votes/likes until the original proposals phase 2 poll starts, the counter-proposal has failed, and the original proposal will go the usual way towards phase 3 (if all requirements are met)
+- Any counter-proposal will be deemed as declined when:
   - It fails to receive more votes in a runoff poll than the original proposal.
   - It fails to receive more than 100 votes in a runoff poll.
 - If declined, the topic addressed in the counter-proposal can only be resubmitted following the rules stated under the [resubmittal delay guidelines](#guaranteeing-stability---resubmital-delay).
 
 If the counter proposal qualifies for a runoff poll in phase 2, the moderators will create a special post in the [Phase 2](https://govern.iota.org/c/shimmer-governance-proposals/phase-2-temperature-check/53) category. This post in phase 2 will include all proposals (original as “Proposal 1” and counter-proposals as “Proposal 2”, “Proposal 3,” etc.)
 
-The option that wins this runoff poll with a simple majority of votes and fulfills the set requirement of a minimum of 100 supportive votes will be the winner and move to phase 3.
+The proposal that wins this runoff poll with a simple majority of votes and fulfills the set requirement of a minimum of 100 supportive votes will be the winner and move to phase 3.
 
 ### 4.8 Seasons
 
@@ -479,12 +588,11 @@ We divide a year into four governance seasons, three months each.
 
 Season's start and end dates will be set as follows:
 
-- **Season 1: 2022/10/01 - 2022/12/31**
-- **Season 2: 2023/01/01 - 2023/03/31**
-- **Season 3: 2023/04/01 - 2023/06/30**
-- **Season 4: 2023/07/07 - 2023/09/30**
+- **Season 1: 01/01 - 31/03**
+- **Season 2: 01/04 - 30/06**
+- **Season 3: 01/07 - 30/09**
+- **Season 4: 01/10 - 31/12**
 
-Season numbers will further increase following the above schedule.
 
 #### Purpose of the seasons
 
@@ -492,9 +600,9 @@ Season numbers will further increase following the above schedule.
 
 Once a decision has been made by the community in phase 3, and it has not been subject to any emergency proposal, we deem the decision final and will implement the change. Changes need to have enough time to prove if they have the intended effect; therefore, a direct submittal of a proposal that intends to change the recently made decision must be declined.
 
-- A proposal declined in a phase 3 governance vote cannot be resubmitted in the same season again. This includes all similar proposals that speak to the same topic or follow the same intent as the declined proposal.
+- A proposal declined in a Phase 3 Governance vote or a Phase 3 Treasury vote cannot be resubmitted in the same season again. This includes all similar proposals that speak to the same topic or follow the same intent as the declined proposal.
 - Also, proposals that intend to revert a decision taken in a successful phase 3 vote fall under this category and must follow the same rules.
-- Only after the start of a new season a proposal that speaks to the same topic or follows the same intention can be submitted as a phase 1 discussion and has to pass the defined governance process successfully.
+- Only after the start of a new season a proposal that speaks to the same topic or follows the same intention can be submitted as a phase 1 discussion again and has to pass the defined governance process successfully.
 - If the proposal topic succeeds through phase 1 and phase 2 but is declined a second time in phase 3 by the community, the waiting time for resubmittal is increased to 2 seasons. Failing this again in the phase 3 vote leads to a 4 season resubmittal delay which is the maximum delay time. This means a topic with the same intent can only be brought up one year later again as a phase 1 proposal if it has been declined three times in a phase 3 vote.
   - **Declined one time: Resubmital Delay 1 Season**
   - **Declined two times: Resubmital Delay 2 Seasons**
@@ -506,17 +614,13 @@ As we are just starting with governance in the Shimmer network, we believe that 
 
 During this probation period, forum moderators can change specific parameters by agreeing to the changes in a vote between the moderators with a 2/3rd majority and then proposing the change as a phase 1 discussion. After passing a successful phase 2 poll in the forum, the changes can be implemented without the need to facilitate a phase 3 vote. Only the forum moderators can submit these proposals.
 
-A moderator must update all parameters in the table [parameters under probation](#specification-parameters-under-probation) to become effective.
+A moderator must document all parameter changes in the table [parameters under probation](#specification-parameters-under-probation) to become effective.
 
-To avoid confusions and situations where rules seem unclear to the community, we will host seasonal specification votes, where all changes that have been done in the current season or are planned for the next season will need to pass the proposal process, and a phase 3 vote by all token holders to be implemented. If this vote is successful, the changes made before using the probation rules will be officially accepted. Github and the IOTA Wiki will be adjusted to reflect these changes.
-
-This means that the governance moderators can change specific parameters during a season but need confirmation from all voters to establish these changes permanently for the next season.
-
-The proposal that involves all the parameter changes needs to be published **30 days before the end of a season** as a phase 1 discussion posted by a governance moderator in the forum.
+Github and the IOTA Wiki will then be adjusted to reflect these changes.
 
 The moderators must agree on the proposal before publishing it with a 2/3rd majority vote.
 
-The probation period for parameter soft consensus changes can be extended for additional two seasons in the proposal that establishes the governance specification for season 3.
+The probation period for parameter soft consensus changes can be extended for additional two seasons through a governance proposal.
 
 ##### Specification parameters under probation
 
@@ -589,7 +693,7 @@ The following parameters of this framework specification can be adjusted by a mo
       </td>
     </tr>
     <tr>
-      <td>Cooldown duration after phase 3 vote
+      <td>Cooldown or timelock duration after phase 3 governance vote
       </td>
       <td>7 days
       </td>
@@ -631,37 +735,38 @@ A good suggestion brought up by the community and used in other DAOs already is 
 
 - A discussion in phase 1 is open-ended and has no defined time limits.
 - A temperature check poll in phase 2 lasts seven days.
-- After this poll is finished, voting in Firefly needs to be prepared.
+- After this phase 2 poll is finished, voting in Firefly / Shimmer EVM Governance system needs to be prepared.
 - The preparation for this (participation event creation, node preparations) may take two to three days.
-- One Moderator approval in the forum is required to move a proposal from phase 1 to phase 2. From phase 2 to phase 3, a minimum of two moderators (or one mod and one admin) must approve, which may also sometimes take a day.
+- One Moderator approval in the forum is required to move a proposal from phase 1 to phase 2. From phase 2 to phase 3, a minimum of three moderators must approve, which may also sometimes take a day.
 
 **_Therefore, the following fixed times when phase 2 polls and phase 3 votes begin are set_:**
 
 - A **phase 2 temperature check poll** can only begin on the…
   - **The 1st and 3rd Monday** of a month before 4 pm UTC and will last seven days. A moderator ensures that the poll gets published these days.
-- The **network-wide phase 3 votes** of all tokens holders with Firefly starts…
-  - **Every 2nd and 4th Thursday** of a month at 1 pm UTC with the “commencing” phase of the participation event. The total duration of phase 3 is 14 days (seven days commencing, seven days counting). The phase 3 announcement post can be published by a moderator after the phase 2 poll has ended successfully and the participation event for the phase 3 vote is created and approved on GitHub.
-- Phase 3 votes will be officially announced in a tweet by the Shimmer Twitter account to reach most community members. A Forum admin will forward the information to the IF comms department.
+- The **network-wide phase 3 votes** of all tokens holders start:
+  - **Every 2nd and 4th Thursday** of a month at 1 pm UTC with the “commencing” phase of the participation event, or the `voting delay` phase of the EVM Governor Contract. The total duration of phase 3 is 14 days (seven days commencing/voting delay, seven days counting/voting). The phase 3 announcement post can be published by a moderator after the phase 2 poll has ended successfully and the participation event for the phase 3 vote is created and approved on GitHub respectively at the moment the last MultiSignature sign has happened which puts the Proposal live into the EVM Governor System.
+- Phase 3 votes will be officially announced in a tweet by the Shimmer Twitter account to reach most community members. A Forum admin will forward these informations to the IF comms department.
 
 This leads to a simple-to-follow schedule:
 
-- Vote on polls in the Forum happen on the **1st and 3rd Monday of a month.**
-- Firefly votes of these proposals happen **on the Thursday following the end of a phase 2 poll.**
+- Vote on polls in the Forum start on the **1st and 3rd Monday of a month.**
+- Phase 3 votes of these proposals start **on the Thursday following the end of a phase 2 poll.**
 
-### 4.10 Execution of a decision - cooldown period
+### 4.10 Execution of a decision - cooldown period / time lock period
 
 We need to implement a cool-down phase after a decision in Firefly (phase 3) has been taken. During this period, the execution of the voted changes rests.
+The same is implemented in the EVM Governor System, where the time lock contract pauses any execution of a decision for 7 days
 
 There are two important reasons to wait a certain amount of time before we will execute a decision:
 
 - **Ragequitting**: Voters that do not agree with the majority decision must have a reasonable time to leave. If someone cannot agree and does not want to continue being part of the project, this person can sell the owned Shimmer tokens and leave the project before the change they do not agree with will happen.
 - **Emergency moves:** In case any formal errors, flaws, or security risks get uncovered during or after a decision.
 
-  An ongoing phase 3 vote that has reached the network-wide Firefly voting cannot be stopped. The event exists in the network, and votes are counted by the nodes already. Experiences in other projects have shown that sometimes errors happen even if everyone acted according to a predefined plan. We cannot take human mistakes out of account.
+  An ongoing phase 3 vote cannot be stopped. Once the event exists in the network, votes are counted. Experiences in other projects have shown that sometimes errors happen even if everyone acted according to a predefined plan. We cannot take human mistakes out of account.
 
 **Suppose this:** During an ongoing phase 3 vote, the community encounters that the vote would lead to a result whose consequences have been unknown to the voters at the beginning of the voting process. Or a former unknown security risk is discovered that would be implemented if the action proposed in the vote is performed.
 
-In that case, a mechanism should be in place to stop a vote from being executed. I suggest that in such cases, the community can request to initiate a [phase 3 emergency proposal](#411-phase---3-emergency-proposals) to prevent the current voted proposal from being executed.
+In that case, a mechanism should be in place to stop a vote from being executed. In such cases, the community can request to initiate a [phase 3 emergency proposal](#411-phase---3-emergency-proposals) to prevent the current voted proposal from being executed.
 
 To implement an emergency move, a certain time delay must exist between the end of a phase 3 vote and the execution of the actions decided in this vote. In such a cooldown period, or already during the ongoing vote, the community can propose [emergency actions](#411-phase---3-emergency-proposals).
 
@@ -679,7 +784,7 @@ An emergency proposal must be implemented as a phase 3 vote event within the sev
 
 If this poll reaches the required votes, the emergency proposal can be directly implemented as a phase 3 vote in Firefly.
 
-Two Forum moderators must check if an emergency proposal fulfills the Acceptance Requirements and approve and implement this proposal in phase 2. It is up to the emergency [proposal submitter](#governance-proposal-submitter-phase-1) to inform the Shimmer community and urge them to look into the proposal and participate in the poll.
+Three Forum moderators must check if an emergency proposal fulfills the Acceptance Requirements and approve and implement this proposal in phase 2. It is up to the emergency [proposal submitter](#governance-proposal-submitter-phase-1) to inform the Shimmer community and urge them to look into the proposal and participate in the poll.
 
 ##### Acceptance Requirements Emergency proposals
 
@@ -703,7 +808,7 @@ Two Forum moderators must check if an emergency proposal fulfills the Acceptance
 ##### Requirements for a successful emergency move against a proposal
 
 - A result with the simple [majority](https://en.wikipedia.org/wiki/Majority) (50% + 1) of votes counted for the option "Accept this emergency proposal! Do not execute proposal (unique identifier)" is required for an emergency proposal to pass the vote successfully
-- To qualify as a binding decision that cancels an already conducted or ongoing vote, an emergency proposal vote must, to be successful, reach higher participation of votes than the winning option of the phase 3 vote. Participation is based on the metric “[average votes per milestone”](#average-votes-per-milestone)
+- To qualify as a binding decision that cancels an already conducted or ongoing vote, an emergency proposal vote must reach higher participation than the winning option of the phase 3 vote. Participation is based on the metric “[average votes per milestone”](#average-votes-per-milestone)
 
 Read some examples about emergency proposal votes in this section [Here are some examples to clarify the principles used:](#here-are-some-examples-to-clarify-the-principles-used-for-the-emergency-proposal)
 
@@ -717,47 +822,49 @@ Read some examples about emergency proposal votes in this section [Here are some
   - SGP - 0000 (**S**himmer **G**overnance **P**roposal), or
   - SEP - 0000 (**S**himmer **E**mergency **P**roposal)
   - The number is assigned by a Forum moderator, increasing the number +1 for every new accepted and published phase 2 proposal
-  - All Unique identifiers will be hosted in a [public notion page](https://shimmergov.notion.site/18af77a6634f4d9d91b7c16d9f294fbd?v=dcd7703eac1e4dd3b5302bf533546cb3) hosted by the forum moderators
+  - All Unique identifiers will be hosted in a [public notion page](https://shimmergov.notion.site/18af77a6634f4d9d91b7c16d9f294fbd?v=dcd7703eac1e4dd3b5302bf533546cb3) hosted by the governance moderators.
 
 #### Simple Summary
 
-- You don't understand it well enough if you cannot explain it simply. Provide a simplified and layman-accessible explanation of the suggested change
+- Provide a simplified and layman-accessible explanation of the suggested change or spending
 
 #### Abstract
 
-- A short (~200 word) description of the issue being addressed. (What is the problem?)
+- A short (~200 word) description of the issue being addressed. (What is the problem addressed or the reason for the proposal?)
 
 #### Motivation
 
-- Motivation is critical for proposals, especially if they want to change the Governance process. (why do we need this?)
+- Motivation is critical for proposals, especially if they want to change the Governance process. (why do we need to do this?)
 
 #### Specification
 
-- The specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow for it to be reasoned about by the community. (What is the new state of the system parameters after the change?)
+- The specification should describe the syntax and semantics of any new feature or the exact implementation. The specification should be detailed enough to allow for it to be reasoned about by the community. (What is the new state of the system parameters after the change?)
+- In case the proposal is a Treasury proposal please provide:
+    - Name of Asset(s) to be spent from the Treasury wallet
+    - Symbol of Asset(s) to be spent from the Treasury wallet
+    - Contract address of Asset(s) to be spent from the Treasury wallet
+    - Amount of Asset(s) to be spent from the Treasury wallet
+    - Receiver Name of Asset(s) to be spent from the Treasury wallet 
+    - Receiver EVM Address of Asset(s) to be spent from the Treasury wallet
 
 #### Rationale
 
-- The rationale clarifies the specification by describing what motivated the design and why the proposer made particular design decisions. It can describe alternate procedures that were considered and related work. The rationale may also provide evidence of the consensus within the community and discuss significant objections or concerns raised during the discussion that lead to the published version of the proposal. (why have the proposed changes been chosen, and how do the proposed changes solve the described problem?)
+- The rationale clarifies the specification by describing what motivated the design and why the proposer made particular design decisions, or why a spending of assets is deemed neccessary and beneficial for the Shimmer network. It can describe alternate procedures that were considered and related work. The rationale may also provide evidence of the consensus within the community and discuss significant objections or concerns raised during the discussion that lead to the published version of the proposal. (why have the proposed changes or spendings been chosen, and how do the proposed changes or spendings solve the described problem?)
 
 #### Implementation
 
 - The section should include any implementation dependencies and potential timelines. What is needed to consider the process finalized and implemented? Who needs to act in a specific manner to implement the changes?
-- It includes the texts and milestone numbers for a [participation event](#participation-event) used in the phase 3 Firefly vote. The text for “question” and “answer” must be identical to the text used in the poll
+- It includes the texts and milestone numbers for a [participation event](#participation-event) or Shimmer EVM proposal used in the phase 3 vote. The text for “question” and “answer” must be identical to the text used in the phase 2 poll
 
 #### Vote Name, question, answer, and optionally additional information
 
-- Write down the exact text that the poll question, the answers in the forum poll, and the potential vote in the Firefly wallet should state. Remember that one vote option must be “Make no changes”.
-- The text you put here cannot be changed once the phase 2 poll has been approved and published by a moderator in the forum and must be 100% clear, understandable, and syntactically correct. Follow the example below. You can copy it and exchange the example text with your texts.
+- Write down the exact text that the poll question, the answers in the forum poll, and the potential vote in Phase 3 should state. Remember that one vote option must be “No, Make no changes” and one option must be "Abstain".
+- The text you put here cannot be changed once the phase 2 poll has been approved and published by a moderator in the forum and must be 100% clear, understandable, and syntactically correct. Follow the examples below. You can copy it and exchange the example text with your texts.
 
 ### 4.13 Hosting of the specification in Github
 
-- This framework will be hosted on the IOTA Wiki Github under [this repository:](https://github.com/iota-wiki/iota-wiki/tree/main/shimmer/learn/governance).
-- Starting with Season 1, the specification agreed on by the voters in the Phase 3 vote will be hosted as the “main” branch of the repository.
-- Any changes that happened during a season based on the [parameters under probation](#specification-parameters-under-probation) rules will be added as a pull request.
-- Once the voters have accepted the specification for the next season in a phase 3 vote, the community managers will merge the pull request containing the changes into the “main” branch.
-- Pull requests should be made by the governance moderators. Reviewers are welcome, and the Community managers will do merges if the vote approves the new specification.
-- Every seasonal specification will be saved as individual files in the repository to achieve a persistent history.
-- The IOTA / Shimmer Wiki will always display the state of the “main” branch.
+- This framework will be permanently hosted in the IOTA Wiki Github under [this repository:](https://github.com/iotaledger/iota-wiki/blob/main/shimmer/learn/governance/the-shimmer-governance-framework.md).
+- Pull requests for changes to this document should be made by the governance moderators or governance forum admins. 
 
 ### 4.14 Hosting of the participation events for Governance votes on GitHub
 
@@ -773,113 +880,8 @@ The participation event needs to be named with the [unique identifier number](#u
 
 Once a proposal has successfully passed the phase 2 poll. A forum moderator will merge the pull request of the participation event into the main branch and announce the phase 3 Firefly vote. Node operators can pick up the event under the provided link (part of the announcement) and add it to their nodes.
 
-## 5. Rationale
 
-#### The reasoning behind the chosen metrics in the proposal process
-
-**Phase 2 poll:**
-
-- Of course, we must know that the forum is not a fully Sybil-protected environment. We have several measures provided by the discourse engine to avoid bots and Sybils entering the forum. Still, sophisticated and knowledgeable users can find ways to avoid those measures and create sybill accounts in the forum. A phase 2 poll is always only a sentiment check in the community and represents a non-binding decision. It is not suitable to make final decisions on a topic. This can only happen in a phase 3 vote in Firefly.
-
-**Counter proposal process:**
-
-- We have discussed several options for this process. Ultimately, we agreed that it is a legit tool to offer the chance for opposing opinions to be heard. We removed the option “make no changes” from the runoff poll because of the following reason:
-- The runoff poll will only start if the original proposal has already successfully passed a phase 2 poll (so it received enough supporting votes) - adding the option? Make no changes” into the runoff poll could lead to the situation that the first legit decision (original post won the phase 2 poll) will be canceled if the runoff poll ends with a majority for “make no changes.”
-- Removing the option ensures that the Token holders will get the chance to decide on this topic.
-
-**Emergency proposal process:**
-
-**The “Participation” metric**
-
-- The [average number of counted votes](#average-votes-per-milestone) per milestone is the essential metric here because of the nature of the currently used voting system. The number of votes counted increases steadily with the time passed in a vote (every 10 seconds, new votes are added based on used tokens).
-
-- This makes average votes per milestone the only reasonable metric to follow here. It directly measures participation. Therefore shows us if a large number of voters are interested in executing an emergency decision.
-- We don't want this emergency rule to enable a small group of voters to overthrow the consensus in the community. So an emergency motion must be the last resort and not easy to execute successfully. But also needs to give a reasonable metric to clearly state that even if the total number of votes reached is lesser (because the timeframe for counting will likely be less), the movement in the community was stronger in favor of the emergency vote.
-- Participation is, in our opinion, the best metric to reason about the legitimacy of such an emergency decision. We must accept that an ongoing vote cannot be stopped or reverted.
-
-  So, even if everyone who voted in favor of the uncovered flaw first would stop voting once a flaw is uncovered or change his vote to the option "make no changes", it would be possible that the option which introduces a flaw would still achieve a majority vote and therefore needs to be implemented.
-
-  We will likely see that most votes will not reach very high participation. This is why a passing quorum of 5% for an average vote might be the way to go (it can always be increased if we want). An emergency proposal that brings up a valid argument can likely activate a much bigger group of community members that feel the need to stop this.
-
-- An emergency move against a proposal must prove that the community realized the decisions taken in the vote it aims to cancel were wrong. Therefore only strong participation can show this. It could be thought about defining specific metrics for an emergency proposal to succeed besides having higher participation like
-  - Participation must be xx% higher than the participation of the vote it counters
-  - Reach a minimum quorum of max. Achievable votes of 10% (compared to 5% in a normal phase 3 vote)
-  - A 2/3rd majority of votes could be required instead of an absolute majority.
-  - We can visit such ideas in the future
-
-#### Here are some examples to clarify the principles used for the emergency proposal
-
-_Assume that during the ongoing Firefly vote (let's call it Vote A), some people step forward and declare that the execution of the vote will result in a dangerous network configuration and provide some data that they feel is sufficient to prove their claims. Let's observe two different sample scenarios and how the framework would handle them._
-
-#### Scenario 1
-
-A strong movement in the community against Vote A after the issue is discovered. Many voters feel this needs to be stopped and vote accordingly in favor of the emergency proposal with high participation.
-
-**Vote A:**
-
-- SMR circulating supply: 1.000.000 SMR
-- counting period chosen: 5000 milestones
-- cooldown period: 500 milestones
-- maximum achievable votes: 1.000.000 SMR x 5000 milestones = 5.000.000.000 votes
-- required quorum to pass the vote successfully (5% of max. achievable votes): 250.000.000 votes
-- Result from vote A:
-  - Option 1 - 1.750.000.000 votes,
-  - Option 2 - 120.000.000 votes.
-  - Option 1 would be a valid winner (simple majority and quorum rules passed) and will be executed after seven days of cooldown
-  - **Participation in Option 1:**
-    - **Average votes per milestone = 350.000 votes/milestone**
-
-**Emergency vote against Vote A:**
-
-- SMR circulating supply: 1.000.000 SMR
-- counting period: 5000 milestones
-- maximum achievable votes: 1.000.000 SMR x 5000 milestones = 5.000.000.000 votes
-- Result from the emergency vote:
-  - Option 1 (stop vote A) 3.250.000.000 votes
-  - Option 2 (no changes) 1.125.000.000 votes
-  - **Participation in Option 1:**
-    - **Average votes per milestone = 650.000 votes/milestone**
-
-**Final Result:**
-
-- In the emergency vote, the option to cancel Vote A achieved the majority of votes. Also, it earned higher participation with more average votes per milestone (650.000 > 350.000) than the winning option of vote A.
-- **The result of Vote A is therefore invalidated by the emergency vote. It will not be executed because more voters have rejected the result of Vote A in the emergency proposal.**
-
-#### Scenario 2
-
-Some people feel that the issue is a big problem and initiate the emergency proposal. Still, most others do not see it as an issue, dont care, and abstain from participating in the emergency proposal.
-
-**Vote A:**
-
-- SMR circulating supply: 1.000.000 SMR
-- counting period: 5000 milestones
-- cooldown period: 500 milestones
-- maximum achievable votes: 1.000.000 SMR x 5000 milestones = 5.000.000.000 votes
-- required quorum to pass the vote successfully (5% of max. achievable votes): 250.000.000 votes
-- Result from vote A:
-  - Option 1 - 1.750.000.000 votes,
-  - Option 2 - 120.000.000 votes.
-  - Option 1 has passed the quorum and the simple majority rule. It would be a valid winner and will be executed after seven days of cooldown.
-  - **Participation in Option 1:**
-    - **Average votes per milestone = 350.000 votes/milestone**
-
-**Emergency vote against Vote A:**
-
-- SMR circulating supply: 1.000.000 SMR
-- counting period: 5000 milestones
-- maximum achievable votes: 1.000.000 SMR x 1300 milestones = 5.000.000.000 votes
-- Result from the emergency vote:
-  - Option 1 (stop vote A) 500.000.000 votes
-  - Option 2 (no changes) 450.000.000 votes
-  - **Participation in Option 1:**
-    - **Average votes per milestone = 100.000 votes/milestone**
-
-**Final Result:**
-
-- Option 1 in the emergency vote achieved the majority of votes but did not reach higher participation in average votes per milestone (100.000 &lt; 350.000) than the winning option of vote A
-- **The result of Vote A stays valid and will be executed. The emergency proposal has not achieved enough participation to counter the decision in vote A, even if a majority of voters in the emergency proposal have voted in favor of the emergency proposal.**
-
-## 7. Glossary
+## Glossary
 
 ##### Participation event
 
@@ -924,11 +926,3 @@ An example of how such an event file looks like is the event we used for the BUI
 ##### Maximum supply
 
 - The number of coins that have ever been created, including coins that have already been burned
-
-## 8. Recommended readings, knowledge library
-
-- [Library of DAO Tools & Governance frameworks](https://seemly-seer-d1b.notion.site/f11f6bb9a4ee4f90855794dfd8d28927?v=a6eb959920f54452a4e2dd13e21e6104)
-- [Library of high-level Governance Research papers](https://seemly-seer-d1b.notion.site/bf9572db4a65414a8bfd08909fa31580?v=3d336999fc9a46f582ebfc4500b53de8)
-- [Collection of recommended articles and readings around DAO’s](https://seemly-seer-d1b.notion.site/DAO-recommended-articles-bd07c25ef4974f5096a09e6babe82a9a)
-- [Collection of DAO & Governance focussed Podcasts and Videos](https://seemly-seer-d1b.notion.site/bf56e6c56dd542f984c1366f807cebd8?v=dbec62901b014d478a5dd6c307d59c0b)
-- [IOTA DAO Pioneers learning circle Session Documents](https://github.com/iota-community/DAO-Pioneers#-iota-dao-pioneers-initiative)
