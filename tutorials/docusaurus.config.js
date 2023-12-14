@@ -27,7 +27,7 @@ module.exports = {
         title: 'Run a Wasp Node',
         description: 'In this tutorial you will learn how to run a wasp node.',
         preview: '/IOTA-Smart-Contract-Tutorials-A.jpg',
-        route: 'smart-contracts/guide/chains_and_nodes/running-a-node',
+        route: '/wasp/running-a-node',
         tags: ['text', 'video'],
       },
     ],
@@ -37,7 +37,7 @@ module.exports = {
         title: 'Run a Wasp Chain',
         description: 'In this tutorial you will learn how to run a wasp chain.',
         preview: '/IOTA-Smart-Contract-Tutorials-B.jpg',
-        route: 'smart-contracts/guide/chains_and_nodes/setting-up-a-chain',
+        route: '/wasp-cli/how-tos/setting-up-a-chain',
         tags: ['text', 'video'],
       },
     ],
@@ -48,61 +48,40 @@ module.exports = {
         description:
           'In this tutorial you will learn how to deploy a wasm smart contract.',
         preview: '/IOTA-Smart-Contract-Tutorials-C.jpg',
-        route:
-          'smart-contracts/guide/chains_and_nodes/setting-up-a-chain#deploying-a-wasm-contract',
+        route: '/wasp-cli/how-tos/setting-up-a-chain#deploying-a-wasm-contract',
         tags: ['text', 'video'],
       },
     ],
     [
       '@iota-wiki/plugin-tutorial',
       {
-        title: 'Run a EVM Chain',
-        description: 'In this tutorial you will learn how to run an EVM node.',
-        preview: '/IOTA-Smart-Contract-Tutorials-D.jpg',
-        route: 'smart-contracts/guide/evm/create-chain',
-        tags: ['text', 'video'],
-      },
-    ],
-    [
-      '@iota-wiki/plugin-tutorial',
-      {
-        title: 'Deploy Solidity Smart Contract using Remix + Metamask',
+        title: 'Deploy a Solidity Smart Contract Using Remix + Metamask',
         description:
           'In this tutorial you will learn how to deploy a solidity smart contract on EVM using remix and metamask.',
         preview: '/IOTA-Smart-Contract-Tutorials-E.jpg',
-        route: 'smart-contracts/guide/evm/tooling#remix',
+        route: '/wasp-evm/getting-started/compatible-tools#remix',
         tags: ['text', 'video'],
       },
     ],
     [
       '@iota-wiki/plugin-tutorial',
       {
-        title: 'Deploy Solidity Smart Contract using Hardhat',
-        description:
-          'In this tutorial you will learn how to deploy a solidity smart contract on EVM using hardhat.',
-        preview: '/IOTA-Smart-Contract-Tutorials-F.jpg',
-        route: 'smart-contracts/guide/evm/tooling#hardhat',
-        tags: ['text', 'video'],
-      },
-    ],
-    [
-      '@iota-wiki/plugin-tutorial',
-      {
-        title: 'Generate WASM Smart Contract using Schema Tool',
+        title: 'Generate a WASM Smart Contract Using the Schema Tool',
         description:
           'In this tutorial you will learn how to use schema tool to generate smart contract template code on rust and golang',
-        preview: '/IOTA-Smart-Contract-Tutorials-G.jpg',
-        route: 'smart-contracts/guide/wasm_vm/usage',
+        preview: '/IOTA-Smart-Contract-Tutorials-G.png',
+        route: '/wasp-wasm/how-tos/schema-tool/usage',
         tags: ['text', 'video'],
       },
     ],
     [
       '@iota-wiki/plugin-tutorial',
       {
-        title: 'Generate WASM Smart Contract using Schema Tool in Typescript',
+        title:
+          'Generate a WASM Smart Contract Using the Schema Tool in Typescript',
         description:
           'In this tutorial you will learn how to use schema tool to generate smart contract template code on typescript',
-        preview: '/IOTA-Smart-Contract-Tutorials-G.jpg',
+        preview: '/IOTA-Smart-Contract-Tutorials-G.png',
         route: 'https://www.youtube.com/watch?v=P5HMgmY3DMM',
         tags: ['video'],
       },
@@ -143,7 +122,7 @@ module.exports = {
     [
       '@iota-wiki/plugin-tutorial',
       {
-        title: 'Setup testnet address and receive funds from faucet',
+        title: 'Set Up a Testnet Address and Receive Funds From the Faucet',
         description:
           'In this tutorial you will learn how to create a seed and address with wallet.rs and receive testnet tokens from the faucet.',
         preview: '/wallet-setup.png',
@@ -154,7 +133,7 @@ module.exports = {
     [
       '@iota-wiki/plugin-tutorial',
       {
-        title: 'How to Setup iota.js for Development',
+        title: 'How to Set Up iota.js for Development',
         description:
           'In this tutorial you will learn how to create a new project, generate a new address and receive x funds from the faucet.',
         preview: '/setup_iota-js_for_development.png',
@@ -183,31 +162,12 @@ module.exports = {
     [
       '@iota-wiki/plugin-tutorial',
       {
-        title: 'Send Shimmer Tokens with Javascript',
-        description:
-          'In this tutorial you will learn how to send Shimmer Tokens in the testnet.',
-        preview: '/send-shimmer-tokens-with-javascript.png',
-        route: 'tutorials/send-shimmer-tokens-with-javascript',
-        tags: [
-          'text',
-          'shimmer',
-          'javascript',
-          'client',
-          'getting-started',
-          'iota.rs (js binding)',
-          'shimmer',
-        ],
-      },
-    ],
-    [
-      '@iota-wiki/plugin-tutorial',
-      {
         title:
-          'Connect to Shimmer EVM Testnet and deploy a Solidity Smart Contract',
+          'Connect to Shimmer EVM Testnet and Deploy a Solidity Smart Contract',
         description:
           'In this tutorial, we will connect to Shimmer EVM Testnet, connect Metamask to it, get funded and deploy a smart contract in Solidity.',
         preview: '/connect-shimmerevm-testnet-and-deploy.png',
-        route: 'tutorials/shimmerevm-setup',
+        route: 'tutorials/shimmerevm-testnet-setup',
         tags: [
           'text',
           'shimmer',
@@ -222,11 +182,12 @@ module.exports = {
     [
       '@iota-wiki/plugin-tutorial',
       {
-        title: 'Deploy a Solidity Smart Contract Using Hardhat',
+        title:
+          'Tutorial - Deploy a Solidity Smart Contract on ShimmerEVM Testnet Using Hardhat',
         description:
           'In this tutorial, you will learn how to set up Hardhat and use it to build, test and deploy a simple smart contract on ShimmerEVM.',
         preview: '/shimmerevm-hardhat.jpg',
-        route: 'tutorials/shimmerevm-hardhat',
+        route: 'tutorials/shimmerevm-testnet-hardhat',
         tags: [
           'text',
           'shimmer',
@@ -252,12 +213,81 @@ module.exports = {
     [
       '@iota-wiki/plugin-tutorial',
       {
-        title: 'Setup WASP locally using Docker',
+        title: 'Set Up WASP locally Using Docker',
         description:
-          'In this tutorial you will learn how to setup WASP and Hornet locally for Development setup.',
+          'In this tutorial you will learn how to set up WASP and Hornet locally for Development setup.',
         preview: '/wasp-setup-shimmer.png',
         route: 'https://youtu.be/ltem9Bh_4hA',
         tags: ['text', 'shimmer', 'video', 'wasp', 'iscp'],
+      },
+    ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: 'Create an NFT with the IOTA SDK and IPFS in NodeJs',
+        description:
+          'In this tutorial you will learn how to create a NFT on the Shimmer network with iota-sdk and IPFS.',
+        preview: '/create-nft-with-wallet-lib.png',
+        route: 'tutorials/create-nft-with-iota-sdk',
+        tags: [
+          'text',
+          'getting-started',
+          'node_js',
+          'iota-sdk',
+          'ipfs',
+          'shimmer',
+          'sdk',
+        ],
+      },
+    ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: 'Send Shimmer Tokens with IOTA SDK in NodeJs',
+        description:
+          'In this tutorial you will learn how to send Shimmer Tokens with IOTA SDK in NodeJs.',
+        preview: '/send-shimmer-tokens-with-iota-sdk.png',
+        route: 'tutorials/send-shimmer-tokens-with-iota-sdk',
+        tags: ['text', 'iota-sdk', 'sdk', 'getting-started', 'rust', 'shimmer'],
+      },
+    ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: 'Connect to Shimmer EVM and Deploy a Solidity Smart Contract',
+        description:
+          'In this tutorial, we will connect to Shimmer EVM, connect Metamask to it, get funded and deploy a smart contract in Solidity.',
+        preview: '/connect-shimmerevm-and-deploy.png',
+        route: 'tutorials/shimmerevm-setup',
+        tags: [
+          'text',
+          'shimmer',
+          'solidity',
+          'getting-started',
+          'wasp',
+          'iscp',
+          'video',
+        ],
+      },
+    ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title:
+          'Tutorial - Deploy a Solidity Smart Contract on ShimmerEVM Using Hardhat',
+        description:
+          'In this tutorial, you will learn how to set up Hardhat and use it to build, test and deploy a simple smart contract on ShimmerEVM.',
+        preview: '/shimmerevm-hardhat.jpg',
+        route: 'tutorials/shimmerevm-hardhat',
+        tags: [
+          'text',
+          'shimmer',
+          'solidity',
+          'shimmerevm',
+          'hardhat',
+          'iscp',
+          'video',
+        ],
       },
     ],
   ],

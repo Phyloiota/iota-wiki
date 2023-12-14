@@ -6,23 +6,30 @@
   "types": "src/types.d.ts",
   "license": "MIT",
   "scripts": {
-    "build": "tsc --build && prettier --config ../.prettierrc.json --write \"dist/theme/**/*.js\"",
+    "copy": "copyfiles -u 1 \"./src/**/*.css\" \"./dist\"",
+    "build": "tsc --build && yarn copy && prettier --config ../.prettierrc.json --write \"dist/theme/**/*.js\"",
     "watch": "nodemon --watch src --ext '*' --exec yarn build",
     "prepack": "yarn build",
     "test": "jest"
   },
   "dependencies": {
-    "@docusaurus/theme-classic": "2.2.0",
+    "@artsy/to-title-case": "^1.1.0",
+    "@docusaurus/theme-classic": "2.4.3",
+    "@docusaurus/theme-common": "2.4.3",
+    "@iota-wiki/plugin-docs": "workspace:^",
     "@metamask/providers": "^10.2.1",
-    "clsx": "^1.2.1"
+    "clsx": "^1.2.1",
+    "html-react-parser": "^4.2.10",
+    "react-markdown": "6",
+    "web3": "^4.2.2"
   },
   "devDependencies": {
-    "@docusaurus/types": "2.2.0",
-    "@types/react": "17.0.2",
+    "@docusaurus/types": "2.4.3",
+    "@types/react": "18.2.24",
     "copyfiles": "^2.4.1",
     "nodemon": "^2.0.16",
-    "prettier": "^2.4.1",
-    "react": "17.0.2",
+    "prettier": "^2.8.8",
+    "react": "18.2.0",
     "typescript": "^4.9"
   },
   "peerDependencies": {

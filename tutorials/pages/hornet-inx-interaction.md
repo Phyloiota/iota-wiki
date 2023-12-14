@@ -5,8 +5,7 @@ In this tutorial, you will learn how to interact with the IOTA Node Extension ([
 ### Prerequisites
 
 - Network
-  - Option 1: Running [Hornet Private Tangle](https://github.com/iotaledger/hornet/tree/develop/private_tangle) (Branch **develop** for the latest [Stardust](https://blog.shimmer.network/stardust-upgrade-in-a-nutshell/) features)
-  - Option 2: Running a node in [Shimmer Beta Network](https://blog.shimmer.network/shimmer-beta-network-is-live/)
+  - Running a node in [Shimmer Beta Network](https://blog.shimmer.network/shimmer-beta-network-is-live/)
 - Development Environment and Libraries
   - Installed [Node.js](https://nodejs.org/en/)
 
@@ -97,7 +96,7 @@ Copy the `inx-proto` file from [here](https://github.com/iotaledger/inx/blob/dev
 
 ### Prepare and run files for simple requests
 
-#### Create new file `ReadBlock.js` and add the following code.
+#### Create new file `ReadBlock.js` and add the following code
 
 ```javascript
 const client = require('./config.js');
@@ -158,7 +157,7 @@ node ./ReadBlock.js
 
 ---
 
-#### Create new file `ReadNodeConfiguration.js` and add the following code.
+#### Create new file `ReadNodeConfiguration.js` and add the following code
 
 ```javascript
 const client = require('./config.js');
@@ -189,7 +188,7 @@ node ./ReadNodeConfiguration.js
 
 ---
 
-#### Create new file `ReadNodeStatus.js` and add the following code.
+#### Create new file `ReadNodeStatus.js` and add the following code
 
 ```javascript
 const client = require('./config.js');
@@ -222,7 +221,7 @@ node ./ReadNodeStatus.js
 
 ### Prepare and run files for streaming requests
 
-#### Create new file `ListenToBlocks.js` and add the following code.
+#### Create new file `ListenToBlocks.js` and add the following code
 
 ```javascript
 const client = require('./config.js');
@@ -255,7 +254,7 @@ node ./ListenToBlocks.js
 
 ---
 
-#### Create new file `ListenToLatestMilestones.js` and add the following code.
+#### Create new file `ListenToLatestMilestones.js` and add the following code
 
 ```javascript
 const client = require('./config.js');
@@ -284,7 +283,7 @@ node ./ListenToLatestMilestones.js
 
 ---
 
-#### Create new file `ReadUnspentOutputs.js` and add the following code.
+#### Create new file `ReadUnspentOutputs.js` and add the following code
 
 ```javascript
 const client = require('./config.js');
